@@ -7,8 +7,11 @@
 - Runtime metadata note: The exact GPT-5.6 model variant was not exposed to the assistant in runtime metadata.
 - Codex-assisted tasks this stage: verified the empty workspace, planned the architecture, scaffolded Next.js, created the route shell, added accessible shared navigation and prepared initial documentation and tests.
 - Human product decisions: Forward Ever Foundation ownership; proposed CIC/St. Mary's College pilot; fictional competition data; local-first Git; no claimed institutional endorsement.
-- Commit history: None. Git has not been initialized.
-- Test evidence: `npm run lint` passed; `npm run typecheck` passed; `npm test` passed 3/3; `npm run build` passed and emitted all requested routes. Browser inspection confirmed all page routes, shared navigation and notices, a working six-link mobile menu, no horizontal overflow at 375px or 1280px, and no captured console warnings/errors. The API scaffold returned its expected JSON response.
+- Repository URL: https://github.com/ChrisDC82/storybridge-legacy
+- First commit: `f9e5a683bcf67e4ce183ea314a233acb6b3f90d4` — `chore: scaffold StoryBridge Legacy Build Week MVP`.
+- First push date: 2026-07-18.
+- Commit history: The verified 35-file scaffold was committed on `main` and pushed to `origin/main`; this evidence update is recorded separately rather than amending the first commit.
+- Test evidence: `npm run lint` passed twice; `npm run typecheck` passed twice; `npm test` passed 3/3 twice; `npm run build` passed twice and emitted all requested routes. Browser inspection confirmed all page routes, shared navigation and notices, a working six-link mobile menu, no horizontal overflow at 375px or 1280px, and no captured console warnings/errors. The API scaffold returned its expected JSON response. A pre-stage secret scan found no matches, and the staged-file review excluded populated environment files and generated build output.
 - Deployment URL: _Placeholder — not deployed._
 - Demo video URL: _Placeholder._
 - `/feedback` Session ID: _Placeholder._

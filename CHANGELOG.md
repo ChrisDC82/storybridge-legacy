@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-07-18 — Repository initialization
+
+- Repository changes: Replaced the invalid empty Git metadata with a valid repository on `main`, connected `origin` to the public `storybridge-legacy` repository and pushed the verified scaffold.
+- Safeguards: Expanded `.gitignore` coverage for populated environment files, build output, operating-system clutter and editor temporary files; confirmed `.env.example` remains tracked.
+- Verification: Reviewed all 35 first-commit files and completed a clean pre-stage secret scan.
+- Application changes: None.
+
 ## 2026-07-18 — Stage 3: initial scaffold
 
 - Features added: Next.js App Router scaffold; shared responsive navigation, pilot notice and footer; requested page and API route placeholders; initial documentation and route tests.
