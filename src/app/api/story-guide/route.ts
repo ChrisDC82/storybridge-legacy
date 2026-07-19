@@ -1,18 +1,13 @@
+import { createFallbackGuidance, getStoryGuideStatus } from "@/lib/story-guide-route";
+
 export async function GET() {
-  return Response.json({
-    service: "StoryBridge Legacy Story Guide",
-    status: "scaffold-ready",
-    mode: "deterministic-fallback",
-    note: "The full server-side OpenAI integration is not implemented in this scaffold stage.",
-  });
+  return Response.json(getStoryGuideStatus(process.env));
 }
 
-export async function POST() {
-  return Response.json(
-    {
-      error: "Story guidance is not implemented in the scaffold stage.",
-      mode: "deterministic-fallback",
-    },
-    { status: 501 },
-  );
+export async function POST(request: Request) {
+  try {
+    return Response.json(createFallbackGuidance(await request.json()));
+  } catch {
+    return Response.json({ error: "Request body must be valid JSON.", mode: "deterministic-fallback" }, { status: 400 });
+  }
 }

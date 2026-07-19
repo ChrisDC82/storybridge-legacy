@@ -29,3 +29,16 @@
 - Browser result: Passed at 375px and 1280px with no horizontal overflow or fresh console/hydration warnings.
 - Remaining limitations: Later-stage contribution, AI, alumni, engagement and moderation workflows are not implemented.
 - Stage verdict: Ready for Stage 6 commit and push.
+
+## Stage 7 audit — 2026-07-18
+
+- Scope: `/contribute`, deterministic Guided Story Mode, validation, consent, local persistence, `/api/story-guide`, privacy, responsive behavior and Stage 7 documentation.
+- Blocking/high-priority issues: None remaining.
+- Issues found and fixed: React lint rejected a synchronous state update inside an effect; it now runs in a cancellable animation-frame callback. Browser inspection found nested main landmarks; the route wrapper is now a neutral `div` under the shared main landmark.
+- Privacy/security: no API key added; `.env.example` contains empty placeholders only; no console logging or public email rendering; submissions remain local and resettable; API output exposes only a configuration boolean.
+- Automated results: lint passed; TypeScript passed; 14 tests passed with 0 failures; Next.js 16.2.10 production build passed and emitted all routes.
+- Browser results: passed at 375px, 768px and 1280px with no horizontal overflow; validation, back/edit, refreshed guidance, skip, guided draft, final editing, review/consent, submission, refresh persistence and reset were verified; no console or hydration errors were captured.
+- API results: GET returned ready deterministic fallback with `openAIConfigured: false`; POST returned eight context-sensitive questions for the fictional test payload; no secret value was exposed.
+- Dependency advisories: `npm audit --json` reports 2 moderate, 0 high and 0 critical. Both trace to Next.js’s pinned `postcss@8.4.31` build dependency (GHSA-qx2v-qp2m-jg93). npm proposes only an incompatible Next.js downgrade, so `npm audit fix --force` was not used. The app does not process untrusted CSS at runtime, which limits exposure but does not erase the advisory.
+- Remaining limitations: localStorage is not durable server storage; Guided Story Mode is deterministic and not a runtime OpenAI integration; historical verification and real admin moderation remain human/out-of-scope workflows; no deployment was performed.
+- Verdict: Stage 7 is ready for a bounded feature commit and push.

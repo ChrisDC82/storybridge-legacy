@@ -18,3 +18,11 @@
 - Deployment URL: _Placeholder — not deployed._
 - Demo video URL: _Placeholder._
 - `/feedback` Session ID: _Placeholder._
+
+## Stage 7 — story contribution and guided drafting
+
+- Date: 2026-07-18.
+- Work completed: built the four-step contribution journey, deterministic Guided Story Mode, contributor review and consent gates, local “Pending review” persistence/reset, and safe fallback Story Guide route behavior without adding dependencies or an API key.
+- Model evidence: Codex work was performed in a user interface reporting **GPT-5.6 Sol, Medium reasoning, Standard speed**. The exact model variant was not independently exposed in runtime metadata. GPT-5.6 was meaningfully used through Codex for implementation and verification; the application’s Story Guide remained deterministic and made no OpenAI API request.
+- Verification: lint and TypeScript passed; 14/14 automated tests passed; the Next.js production build emitted `/contribute` and `/api/story-guide`. Browser QA at 375px, 768px and 1280px covered errors, edits, backward movement, refreshed questions, skip and guided drafting, editable final text, review and consent gates, locally generated ID/status, email privacy, refresh persistence, reset, overflow, console and hydration behavior. API GET and POST worked with no key and exposed no secret value.
+- Dependency evidence: `npm audit --json` reported 2 moderate, 0 high and 0 critical findings involving Next.js’s pinned `postcss@8.4.31`. npm’s proposed remediation was an incompatible Next.js major downgrade, so the supported dependency set was retained and the residual build-tool risk documented.

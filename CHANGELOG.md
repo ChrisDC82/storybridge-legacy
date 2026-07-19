@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-18 — Stage 7: story contribution and guided drafting
+
+- Features added: accessible four-step contribution wizard; field, draft and consent validation; deterministic context-sensitive questions; skippable and refreshable Guided Story Mode; contributor-editable suggested draft; local submission ID, timestamp and “Pending review” status; browser-local persistence and reset; safe GET/POST fallback API behavior without an OpenAI key.
+- Safeguards added: fictional-data and proposed-pilot notices, no-endorsement wording, no-sensitive-data warning, private contact-email treatment, explicit consent, human-moderation status and guidance that never claims verification or adds unsupported history.
+- Issues fixed: replaced the contribution placeholder, corrected a synchronous state update flagged by React linting, and removed a nested `<main>` landmark found during browser QA.
+- Verification: lint, TypeScript, 14 automated tests and production build passed; interactive browser QA covered validation, edits, back/forward movement, refresh, skip and guided paths, consent, local persistence/reset, responsive overflow, console and hydration behavior.
+- Dependency audit: two moderate advisories remain in Next.js’s pinned PostCSS build-tool dependency; npm proposes only an incompatible major downgrade, so no forced fix was applied.
+- Known limitations: storage and moderation status are local demonstration behavior; the guide is deterministic and no OpenAI request, server persistence, upload, email or full moderation feature is implemented.
+
 ## 2026-07-18 — Stage 6: landing page and Legacy Timeline
 
 - Features added: polished public landing page; refined navigation and footer; approved local logo; ten fictional timeline records covering all seven required categories; deterministic search, category and decade filters; active-filter and result feedback; reset and no-results states; statically generated record-detail pages.
