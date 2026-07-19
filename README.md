@@ -2,94 +2,166 @@
 
 **Preserving our stories. Reconnecting our people. Building opportunities across generations.**
 
-StoryBridge Legacy is a living digital time capsule and alumni-engagement concept for Caribbean educational institutions, developed for the Forward Ever Foundation as an OpenAI Build Week project.
+StoryBridge Legacy is a Forward Ever Foundation Build Week MVP: a living digital time capsule and alumni-engagement concept for Caribbean educational institutions. It demonstrates how carefully preserved institutional memory can renew relationships among students, educators, local alumni and the global diaspora.
 
-## Current verified release
+## Inspiration and problem
 
-Stage 9 includes:
+School history is often scattered across boxes, yearbooks, social platforms and private memories. Alumni relationships can also weaken across geography and generations, limiting access to mentorship, professional knowledge and wider networks. Technology cannot solve these structural challenges by itself, but it can help communities organise stories, consent and connection around responsible human relationships.
 
-- a polished landing page and searchable Legacy Timeline with ten fictional records;
-- an accessible four-step story-contribution wizard and deterministic Guided Story Mode;
-- a filterable Alumni Directory with 12 fictional profiles and statically generated detail routes;
-- text, industry, country, graduation-period, expertise, support-type and availability filtering;
-- four engagement pathways covering knowledge, access, institutional support and future enterprise;
-- a validated expression-of-interest form with private browser-local persistence, local IDs, timestamps, “Interest received” status and reset controls; and
-- explicit privacy, human-review, fundraising and responsible-investment boundaries.
-- a browser-local Demonstration Admin Dashboard with reversible moderation states, required notes, timestamps, history, truthful counts and a local-only approved preview; and
-- an eight-part Impact narrative covering brain circulation, a staged roadmap, possible sustainability routes and governance safeguards without claiming deployment, funding or endorsement.
+## From brain drain to brain circulation
 
-Production authentication, server persistence, real publication and deployment remain later-stage work.
+Migration is not betrayal, and overseas experience is not more valuable than local knowledge. StoryBridge Legacy treats local and diaspora alumni as equally important participants in a two-way exchange of expertise, mentorship, introductions and support. Nothing in the MVP guarantees placements, scholarships, funding, donations, partnerships or investment outcomes.
 
-## Fictional profile policy
+## Core MVP features
 
-Every competition profile and story is fictional demonstration data. Profiles do not represent real CIC alumni, employers, awards, availability or professional claims. Initials-based placeholders avoid remote imagery and unlicensed headshots.
+- Public landing page with approved StoryBridge Legacy branding
+- Searchable, filterable Legacy Timeline with ten fictional records and detail pages
+- Four-step story contribution with validation, consent and contributor-controlled editing
+- Deterministic, optional and skippable Guided Story Mode
+- Browser-local submissions beginning at `Pending review`
+- Alumni Directory with 12 fictional profiles, seven filter dimensions and detail pages
+- Engagement Opportunities form with separate browser-local storage
+- Demonstration Admin Dashboard with four reversible moderation states, notes, timestamps and history
+- Local-only approved archive preview
+- Impact and Scale narrative, proposal roadmap, sustainability options and safeguards
+- Automated tests, acceptance evidence, audit history and demo instructions
 
-CIC/St. Mary’s College is a proposed pilot only; no approval, adoption, partnership or endorsement is claimed.
+## Complete user journeys
 
-## Brain drain to brain circulation
+1. Explore the Legacy Timeline, combine search/category/decade filters, open a fictional detail record and reset the filters.
+2. Enter a fictional memory, optionally answer guided questions, edit the suggested draft, confirm contributor review and consent, then save it locally for moderation.
+3. Open the Demonstration Admin Dashboard, compare the original and final drafts, request information, return to pending, approve or reject, and inspect retained history and the local-only approved preview.
+4. Search the fictional Alumni Directory by profession, location, graduation period, expertise, support type and availability, then open a profile.
+5. Explore engagement pathways and save a fictional expression of interest locally; its contact email remains private.
+6. Finish on Impact and Scale to review brain circulation, future roadmap, sustainability possibilities and governance safeguards.
 
-Skilled migration can weaken direct institutional connections, but migration is not betrayal and overseas alumni are not inherently more valuable than local alumni. StoryBridge Legacy demonstrates how knowledge, relationships and opportunity can circulate across borders through mentorship, career guidance, programme support, fundraising readiness, international introductions and responsible enterprise conversations.
+## Technology stack
 
-Nothing in the demonstration guarantees mentorship, placements, scholarships, funding, donations, introductions or investment.
+- Next.js 16 App Router and React 19
+- TypeScript
+- Tailwind CSS 4 and project CSS
+- Semantic accessible HTML
+- Node’s built-in test runner
+- ESLint
+- Vercel-compatible configuration
+- Browser `localStorage` for explicitly local demonstration records
 
-## Local persistence and privacy
+No database, production authentication, payment service, email service or runtime OpenAI dependency is required.
 
-Story contributions and engagement interests use separate `localStorage` keys. They remain only in the current browser and can be reset independently. Contact email is retained privately in the local record but omitted from public-safe confirmations. Nothing is emailed, uploaded, published or transmitted externally.
+## Project architecture
 
-Do not enter real or sensitive personal information.
+```text
+src/app/                 App Router pages, layout, styling and Story Guide route
+src/components/          Timeline, contribution, directory, engagement and admin UI
+src/data/                Fictional timeline and alumni seed records
+src/lib/                 Filtering, validation, guidance, storage and moderation logic
+src/types/               Shared TypeScript domain models
+tests/                   Automated route, data, validation, storage and moderation tests
+public/branding/         Approved StoryBridge Legacy logo
+```
 
-## Technology
-
-Next.js App Router, React, TypeScript, Tailwind CSS, ESLint and Vercel-compatible route handlers. Stage 9 added no dependency.
+Story and engagement records use separate storage keys. Browser access occurs only inside client components or storage functions invoked by those components.
 
 ## Local setup
 
 Requirements: Node.js 20.9 or later and npm.
 
 ```bash
-npm install
+git clone https://github.com/ChrisDC82/storybridge-legacy.git
+cd storybridge-legacy
+npm ci
 npm run dev
 ```
 
 Open `http://localhost:3000`.
 
-## Environment variables
-
-The current deterministic Story Guide requires no environment variables. `.env.example` contains empty server-only placeholders for a separately approved future integration:
-
-| Variable | Purpose |
-| --- | --- |
-| `OPENAI_API_KEY` | Optional future server-only key; never expose it client-side |
-| `OPENAI_STORY_MODEL` | Optional future server-side Story Guide model |
-
-No OpenAI request is made by the current application.
-
-## Verification
+## Development and testing commands
 
 ```bash
-npm run lint
-npm run typecheck
-npm test
-npm run build
+npm run dev        # local development server
+npm run lint       # ESLint
+npm run typecheck  # TypeScript without emitting files
+npm test           # all automated tests
+npm run build      # production build
+npm start          # serve a completed production build
 ```
 
-Manual results are recorded in `ACCEPTANCE_TEST.md` and `AUDIT_REPORT.md`.
+## Environment variables
+
+The MVP requires no environment variables. `.env.example` contains empty placeholders for a separately approved future server-side integration:
+
+| Variable | Current requirement | Purpose |
+| --- | --- | --- |
+| `OPENAI_API_KEY` | Not required | Optional future server-only credential; never expose client-side |
+| `OPENAI_STORY_MODEL` | Not required | Optional future server-side model selection |
+
+Do not add a real key to the repository. Populated `.env*` files are ignored while `.env.example` remains tracked.
+
+## Guided Story Mode and future OpenAI integration
+
+The MVP uses deterministic Guided Story Mode. It asks context-sensitive questions and creates a suggested draft only from contributor-supplied information. It is an editing aid, not a fact checker; contributors may skip it and must review the final draft.
+
+The isolated `/api/story-guide` route is a future server-side integration point, but currently returns deterministic guidance and requires no API key. A future OpenAI integration would need separate approval, server-only secrets, human review and the existing deterministic fallback. Do not claim that runtime GPT-5.6 is active.
 
 ## How Codex and GPT-5.6 were used
 
-Codex supported architecture, implementation, tests, browser QA, audit repair and documentation. The user interface reported **GPT-5.6 Sol, Medium reasoning, Standard speed**; runtime metadata did not independently expose the exact variant. The development-session model is distinct from the application’s deterministic Guided Story Mode.
+The Codex user interface reported **GPT-5.6 Sol, Medium reasoning, Standard speed**. GPT-5.6 was used through Codex for architecture, implementation, testing, repair, auditing and documentation. Runtime metadata did not independently expose the exact model variant. This development-session model is distinct from the application’s deterministic Guided Story Mode.
 
-## Fundraising and investment boundaries
+## Key human decisions
 
-The product may explain how alumni reconnection can create foundations for scholarships, programme sponsorship, equipment support, diaspora philanthropy, fundraising and future responsible investment introductions. It does not collect money, present financial products, promise returns, claim investors or partners, or present investment opportunities to minors.
+- Forward Ever Foundation owns the project direction.
+- CIC/St. Mary’s College is only the proposed pilot.
+- Competition stories and profiles use fictional demonstration data.
+- Local and diaspora alumni are positioned as equally important.
+- Contributor voice, consent, uncertainty and human moderation take priority over automation.
+- The MVP stays browser-local and avoids production infrastructure that cannot be responsibly demonstrated during Build Week.
 
-## MVP limitations
+## Trust, accuracy and privacy
 
-There is no server database, production authentication, real alumni verification, automated matching, private messaging, email delivery, payment or donation collection, investment transaction, media upload, multi-school tenancy, OCR or native app. Local data is browser-specific and can be cleared by the user or browser.
+Every competition story and alumni profile is fictional and labelled. No record claims real CIC history, real alumni, employers, awards, availability or institutional participation. CIC/St. Mary’s College has not formally approved, adopted or endorsed this MVP.
+
+Guided Story Mode does not verify history or invent unsupported facts. Contributors review their drafts, uncertainty remains visible, and a human moderator must review any record before possible future publication. Approval in the dashboard creates only a browser-local preview; it does not publish to the Legacy Timeline.
+
+Contact emails are retained only inside the corresponding private browser-local record and are omitted from public-safe summaries and the moderation interface. No contributor or engagement data is emailed, uploaded or transmitted externally. Local records are device/browser-specific, can be cleared by the browser and are not suitable for real or sensitive information.
+
+## Moderation model
+
+Submissions support `Pending review`, `Approved`, `More information requested` and `Rejected`. Information requests and rejections require notes. Every transition records a timestamp and history entry, and actions remain reversible. Moderation-state reset preserves stories; story deletion does not alter the separate engagement-interest storage.
+
+The dashboard is explicitly a demonstration and has no production authentication or security claim.
 
 ## Deployment
 
-The application is designed for Vercel, but deployment remains outside Stage 9.
+The repository is prepared for Vercel import and does not require environment variables, a database or server secrets.
+
+1. Sign in to Vercel and choose **Add New → Project**.
+2. Import `ChrisDC82/storybridge-legacy` from GitHub.
+3. Confirm **Next.js** is detected and leave the root directory as the repository root.
+4. Leave environment variables empty for the MVP.
+5. Select **Deploy**.
+6. After deployment, verify every route, all static detail paths, `/api/story-guide`, branding, browser-local persistence, console output and responsive behaviour.
+7. Record the real production URL in `BUILD_WEEK_EVIDENCE.md` only after successful verification.
+
+Deployment has not yet been performed or claimed.
+
+## Known MVP limitations
+
+- Browser-local, device-specific storage rather than a durable database
+- No production authentication, roles or institutional administration
+- No real alumni or historical verification workflow
+- No outbound email, messaging, automated matching or media upload
+- No payment, donation, fundraising transaction, financial product or investment transaction
+- No production safeguarding infrastructure, multi-school tenancy, OCR or native app
+- Deterministic guidance rather than runtime OpenAI generation
+- Deployment and independent secondary-thread audit remain pending
+
+## Post-competition roadmap
+
+Subject to evidence, permission, safeguarding and resources: validate a proposed institutional pilot; design production governance and role-based access; introduce durable storage and verified moderation; evaluate an optional server-side OpenAI integration; test a Trinidad and Tobago rollout; then consider Caribbean and global diaspora participation. These are proposals, not commitments.
+
+## Build Week evidence summary
+
+The project was created on 2026-07-18 and developed through bounded, human-approved stages covering scaffold, repository setup, landing/timeline, contribution/guidance, alumni/engagement, moderation/impact and final readiness. Each feature stage includes commit, automated-test, browser-QA, secret-scan and audit evidence in `BUILD_WEEK_EVIDENCE.md`, `CHANGELOG.md`, `ACCEPTANCE_TEST.md` and `AUDIT_REPORT.md`. Deployment URL, demo video, `/feedback` Session ID and final submission date remain explicit placeholders until those events occur.
 
 ## Licence
 

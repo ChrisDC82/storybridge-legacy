@@ -1,11 +1,11 @@
 # Build Week evidence
 
-- Build Week start date: Not yet supplied.
+- Build Week start date: Not supplied by the user.
 - Project creation date: 2026-07-18.
 - Primary Codex thread purpose: Plan, build, verify and document the StoryBridge Legacy MVP through bounded, human-approved stages.
 - Model reported by the user interface: GPT-5.6 Sol, Medium reasoning, Standard speed.
 - Runtime metadata note: The exact GPT-5.6 model variant was not exposed to the assistant in runtime metadata.
-- Codex-assisted scaffold tasks: verified the empty workspace, planned the architecture, scaffolded Next.js, created the route shell, added accessible shared navigation and prepared initial documentation and tests.
+- Major Codex-assisted tasks: architecture; Next.js scaffold; branding integration; landing page and timeline; contribution, validation and deterministic guidance; fictional alumni directory and engagement interests; local moderation and Impact roadmap; automated tests; browser QA; repair; dependency/privacy/accessibility audits; documentation and deployment preparation.
 - Human product decisions: Forward Ever Foundation ownership; proposed CIC/St. Mary's College pilot; fictional competition data; local-first Git; no claimed institutional endorsement.
 - Repository URL: https://github.com/ChrisDC82/storybridge-legacy
 - First commit: `f9e5a683bcf67e4ce183ea314a233acb6b3f90d4` — `chore: scaffold StoryBridge Legacy Build Week MVP`.
@@ -18,6 +18,7 @@
 - Deployment URL: _Placeholder — not deployed._
 - Demo video URL: _Placeholder._
 - `/feedback` Session ID: _Placeholder._
+- Final submission date: _Placeholder._
 
 ## Stage 7 — story contribution and guided drafting
 
@@ -47,3 +48,14 @@
 - Verification: lint and TypeScript passed; 33/33 automated tests passed; Next.js 16.2.10 production build generated 33 pages. Browser QA at 375px, 768px and 1280px covered the empty queue, fictional story creation, private-email omission, all moderation transitions, required-note errors, timestamp/history persistence after refresh, disabled duplicate action, local approved preview, moderation reset preserving stories, story deletion preserving engagement-interest storage, cleanup, mobile navigation, keyboard-focusable controls, overflow, console and hydration behavior.
 - Dependency evidence: `npm audit --json` reported 2 moderate, 0 high and 0 critical findings involving Next.js’s pinned `postcss@8.4.31`; npm offered only an incompatible major downgrade, so no forced fix was applied.
 - Feature commit: `48bbb5ddd92dc052d7bb5c1c6d8c0627ab0eaf51` — `feat: add moderation dashboard and impact roadmap`, pushed to `origin/main` on 2026-07-18.
+
+## Stages 10–11 — final documentation, acceptance and deployment readiness
+
+- Date: 2026-07-18.
+- Work completed: consolidated every required document; removed obsolete current-product stage wording; completed the full route, journey, responsive, accessibility, privacy, historical-accuracy, fundraising, investment, dependency and deployment-preparation audits.
+- Model evidence: the Codex user interface reported **GPT-5.6 Sol, Medium reasoning, Standard speed**. GPT-5.6 was used through Codex for architecture, implementation, testing, repair, auditing and documentation. Runtime metadata did not independently expose the exact variant. The application itself remains deterministic and makes no OpenAI request.
+- Automated evidence: lint passed; TypeScript passed; 33/33 tests passed; Next.js 16.2.10 generated 33 pages; API GET/valid POST/invalid POST returned 200/200/400; project-wide credential/private-key scan returned 0 matches.
+- Manual evidence: 29 public/detail routes passed; the complete fictional user journey passed; 35 primary-route responsive checks at 320/375/768/1024/1280px found no overflow, off-screen controls or broken images; console, warning and hydration counts were all 0; acceptance-test local records were removed through UI controls.
+- Audit evidence: no blocking/high-priority issue remained. Three safe medium documentation/wording issues were corrected. Dependency audit remained 2 moderate, 0 high and 0 critical at Next.js’s pinned PostCSS build path, with no safe compatible update.
+- Deployment evidence: local Vercel readiness passed. Vercel CLI is not installed; production deployment, URL and production browser verification remain pending explicit approval and authentication.
+- Final readiness commit: _Pending bounded commit._

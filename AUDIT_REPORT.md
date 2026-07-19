@@ -1,69 +1,94 @@
-# Audit report
+# Final audit report
 
-- Audit date: 2026-07-18 (Stage 3 scaffold audit; final MVP audit remains pending).
-- Scope: Requested route availability, shared navigation and notices, responsive shell, console/hydration behavior, secrets, placeholder wording, configuration and required initial documentation.
-- Blocking issues: None confirmed in the scaffold.
-- High-priority issues: None confirmed in the scaffold.
-- Medium-priority issues: None confirmed in the scaffold. The initial npm install reported two moderate dependency advisories for later review.
-- Optional improvements: Replace starter favicon/assets when the approved logo is supplied and add route-specific metadata during feature stages.
-- Fixes completed: Corrected environment-example ignore handling, synchronized package metadata, removed remote font dependence and replaced generic starter copy/metadata.
-- Remaining limitations: All full MVP interactions, persistence, OpenAI guidance, deterministic story guidance, moderation actions, production authentication and deployment are pending by design.
-- Lint result: Passed (`eslint .`, exit 0).
-- Type-check result: Passed (`tsc --noEmit`, exit 0).
-- Test result: Passed (3 tests, 0 failures).
-- Production-build result: Passed (Next.js 16.2.10; all requested routes emitted).
-- Deployment result: Not deployed.
-- Final readiness verdict: Stage 3 scaffold is ready for a first commit after the user approves Git setup; full MVP readiness is not yet assessed.
+Audit date: 2026-07-18. Scope: complete StoryBridge Legacy MVP, final documentation, local production readiness and Vercel preparation. Production deployment remains pending approval.
 
-## Stage 6 audit — 2026-07-18
+## Readiness summary
 
-- Scope: landing page, shared public navigation/footer, supplied branding, Legacy Timeline data and types, search and filters, empty/reset states, detail routes, responsive behavior, accessibility semantics, privacy and historical-accuracy wording.
-- Blocking issues: None remaining.
-- High-priority issues: None remaining.
-- Medium-priority issues: None remaining.
-- Fixes completed: dynamic-route typing, notice spacing and Next.js smooth-scroll route-transition warning.
-- Lint result: Passed.
-- Type-check result: Passed.
-- Test result: Passed (8 tests, 0 failures).
-- Production-build result: Passed; 10 legacy detail paths prerendered.
-- Browser result: Passed at 375px and 1280px with no horizontal overflow or fresh console/hydration warnings.
-- Remaining limitations: Later-stage contribution, AI, alumni, engagement and moderation workflows are not implemented.
-- Stage verdict: Ready for Stage 6 commit and push.
+The bounded MVP feature set is complete and locally verified. No blocking or high-priority issue remains. The application requires no API key, database, production authentication, payment service or email service. Final verdict: **Ready for deployment with documented limitations.**
 
-## Stage 7 audit — 2026-07-18
+## Feature-completion matrix
 
-- Scope: `/contribute`, deterministic Guided Story Mode, validation, consent, local persistence, `/api/story-guide`, privacy, responsive behavior and Stage 7 documentation.
-- Blocking/high-priority issues: None remaining.
-- Issues found and fixed: React lint rejected a synchronous state update inside an effect; it now runs in a cancellable animation-frame callback. Browser inspection found nested main landmarks; the route wrapper is now a neutral `div` under the shared main landmark.
-- Privacy/security: no API key added; `.env.example` contains empty placeholders only; no console logging or public email rendering; submissions remain local and resettable; API output exposes only a configuration boolean.
-- Automated results: lint passed; TypeScript passed; 14 tests passed with 0 failures; Next.js 16.2.10 production build passed and emitted all routes.
-- Browser results: passed at 375px, 768px and 1280px with no horizontal overflow; validation, back/edit, refreshed guidance, skip, guided draft, final editing, review/consent, submission, refresh persistence and reset were verified; no console or hydration errors were captured.
-- API results: GET returned ready deterministic fallback with `openAIConfigured: false`; POST returned eight context-sensitive questions for the fictional test payload; no secret value was exposed.
-- Dependency advisories: `npm audit --json` reports 2 moderate, 0 high and 0 critical. Both trace to Next.js’s pinned `postcss@8.4.31` build dependency (GHSA-qx2v-qp2m-jg93). npm proposes only an incompatible Next.js downgrade, so `npm audit fix --force` was not used. The app does not process untrusted CSS at runtime, which limits exposure but does not erase the advisory.
-- Remaining limitations: localStorage is not durable server storage; Guided Story Mode is deterministic and not a runtime OpenAI integration; historical verification and real admin moderation remain human/out-of-scope workflows; no deployment was performed.
-- Verdict: Stage 7 is ready for a bounded feature commit and push.
+| Area | Result |
+| --- | --- |
+| Landing page and approved branding | Passed |
+| Legacy Timeline and 10 detail routes | Passed |
+| Contribution and deterministic Guided Story Mode | Passed |
+| Browser-local pending submissions | Passed |
+| Alumni Directory and 12 detail routes | Passed |
+| Engagement Opportunities and separate local storage | Passed |
+| Demonstration moderation and approved local preview | Passed |
+| Impact and Scale narrative and safeguards | Passed |
+| Build Week documentation and evidence | Passed locally |
+| Vercel production deployment | Pending approval |
 
-## Stage 8 audit — 2026-07-18
+## Routes and user journeys reviewed
 
-- Scope: Alumni Directory data, search/filtering, static profile routes, engagement opportunity copy, expression-of-interest validation and local persistence, privacy, accessibility, responsive behavior and documentation.
-- Blocking/high-priority issues: None remaining.
-- Issues found and fixed: graduation periods initially appeared in lexical rather than natural chronological order; options now run from newest decade to “Before 1990”. The shared footer notice was expanded from fictional stories to fictional stories and alumni profiles.
-- Data safeguards: 12/12 profiles are marked fictional; IDs/slugs are unique; approved support values are enforced; no real employers, awards, confirmed offers, investors, partnerships or performance claims appear.
-- Privacy/security: contribution and interest records use distinct storage keys; email is stored only in the private local interest record and omitted from the public-safe confirmation; no personal information is logged or transmitted; no API key or new dependency was added.
-- Automated results: lint passed; TypeScript passed; 23 tests passed with 0 failures; Next.js 16.2.10 production build passed and generated 33 pages, including 12 alumni details.
-- Browser results: passed at 375px, 768px and 1280px. All filters, combined state, reset, empty state, profile detail, CTA, complete validation and submission path, persistence/reset, mobile menu and focusable controls worked; no horizontal overflow, console errors or hydration errors were captured.
-- Dependency advisories: `npm audit --json` reports 2 moderate, 0 high and 0 critical. Both trace to Next.js’s pinned `postcss@8.4.31` build dependency (GHSA-qx2v-qp2m-jg93). npm offers only an incompatible Next.js major downgrade; `npm audit fix --force` was not used.
-- Remaining limitations: fictional data only; browser-local storage; no real verification, administrator moderation, production authentication, automated matching, messaging, email, payments, donations, financial products or investment transactions.
-- Verdict: Stage 8 is ready for a bounded feature commit and push.
+All 29 public/detail pages loaded with one main landmark, an H1, shared navigation, pilot notice, footer and no broken image. This included `/`, `/legacy`, every legacy detail route, `/contribute`, `/alumni`, every alumni detail route, `/engage`, `/impact` and `/admin`. `/api/story-guide` returned 200 for GET and valid POST, and 400 for malformed JSON.
 
-## Stage 9 audit — 2026-07-18
+The complete fictional journey passed: timeline search/filter/detail/reset; contribution errors, guided answers, draft editing, consent, submission and refresh persistence; information request, refresh, return to pending, approval and preview; alumni filtering/profile; engagement errors, submission and persistence; Impact review; moderation reset; and independent story/interest deletion. Test records were removed through the UI.
 
-- Scope: `/admin` browser-local moderation, Stage 7 record compatibility, status/note/history behavior, privacy and reset boundaries; `/impact` challenge, brain circulation, engagement, investment boundaries, roadmap, sustainability, safeguards and calls to action.
-- Blocking/high-priority issues: None remaining.
-- Issues found and fixed: legacy Stage 7 records were normalized into the expanded moderation schema; a runtime type import was made compatible with direct Node tests; two test assertions were narrowed to measure the intended claims. No browser-facing defect was confirmed.
-- Privacy/security: email is stored only in the private story record and never rendered by the dashboard; no email, publication or external transmission occurs; story and interest storage remain independent; no API key or dependency was added.
-- Automated results: lint passed; TypeScript passed; 33 tests passed with 0 failures; Next.js 16.2.10 production build passed and generated 33 pages.
-- Browser results: passed at 375px, 768px and 1280px. Empty/populated queues, all status transitions, note rules, timestamps, retained history, refresh persistence, disabled duplicate state, approved local preview, independent resets, Impact sections/links, mobile navigation and focusable controls worked. No horizontal overflow, console errors or hydration errors were captured.
-- Dependency advisories: `npm audit --json` reports 2 moderate, 0 high and 0 critical findings through Next.js’s pinned `postcss@8.4.31`. npm offers only an incompatible major downgrade; no forced change was made.
-- Remaining limitations: demonstration-only local storage; no production authentication, database, outbound email, real publication, institutional endorsement, funding, financial transaction, investment transaction or deployment.
-- Verdict: Stage 9 is ready for the bounded feature commit and push.
+## Automated checks
+
+- ESLint: passed, exit 0.
+- TypeScript: passed, exit 0.
+- Automated tests: 33 passed, 0 failed, 0 skipped.
+- Production build: passed with Next.js 16.2.10; 33 pages generated, including 10 legacy and 12 alumni detail paths.
+- API checks: GET 200, valid POST 200, invalid JSON POST 400.
+- Browser log: 0 errors, 0 warnings and 0 hydration/client-server mismatch messages.
+- Secret scan: 0 credential/private-key patterns; only `.env.example` is tracked.
+
+## Responsive and browser audit
+
+Primary routes were tested at 320px, 375px, 768px, 1024px and 1280px: 35 page/width combinations. No horizontal overflow, off-screen primary control, broken image, missing H1/main/footer or negative-tab-index control was found. The logo, navigation, forms, filters, timeline/alumni cards, moderation controls and notes, Impact roadmap, long text and footer remained usable.
+
+All 29 page routes were additionally swept at 1280px. Static images loaded, local storage persisted across refreshes and the console contained only normal development/HMR information. No missing asset, 404, 500, client/server inconsistency or storage failure was confirmed.
+
+## Accessibility review
+
+- One `<main>` and one H1 per audited page; no primary-route heading jumps.
+- Semantic native navigation, forms, buttons, links, details/summary, lists, tables and definition lists.
+- Labels on every input/select/textarea; errors associated through `aria-invalid` and `aria-describedby`.
+- Error summaries use alert semantics; state changes use live status regions.
+- Mobile navigation exposes an accessible name and closes after route selection.
+- Visible focus indicator, text-based statuses and reduced-motion handling are present.
+- No custom dialog or keyboard trap exists. Native controls were focusable; the available browser driver did not provide a reliable sequential Tab trace, so final production spot-checking with a physical keyboard remains recommended.
+- Representative computed contrast passed; low contrast appeared only on disabled reset buttons, which are not actionable.
+
+## Privacy and historical-accuracy review
+
+Emails remained absent from public-safe confirmation and admin rendering. Storage is browser-local, separate by journey, guarded inside client components and described as non-durable. No personal test data, secret, real school record or real alumni claim is committed; no contributor data is transmitted externally. Admin is explicitly unauthenticated demonstration software and makes no production security claim.
+
+All competition stories and profiles are labelled fictional. Guided Story Mode is deterministic, uses submitted information only and says it is not verification. Contributors review drafts; uncertainty stays visible; human moderation is required; approval produces no automatic public publication. CIC/St. Mary’s College remains a proposed pilot with no endorsement claim.
+
+## Fundraising and investment review
+
+No money, donation total, payment, investment transaction, promised return, confirmed investor or financial product exists. Responsible investment is framed only as a possible future introduction pathway subject to governance and safeguarding, never as a marketplace or offer to minors. Local and diaspora alumni are explicitly valued equally.
+
+## Dependency findings
+
+`npm audit --json` reports 2 moderate, 0 high and 0 critical findings. The affected transitive package is `postcss@8.4.31` at `storybridge-legacy → next@16.2.10 → postcss@8.4.31`, advisory GHSA-qx2v-qp2m-jg93. The separate Tailwind path uses `postcss@8.5.19` and is not affected.
+
+The vulnerable copy is used by the Next.js build/tooling dependency path; the MVP does not accept or stringify untrusted CSS at runtime. The latest stable Next.js reported by npm is still 16.2.10 and pins 8.4.31. npm offers only an incompatible downgrade to Next.js 9.3.3, so no safe compatible update exists and no forced fix was applied. The residual risk is acceptable for this bounded MVP with documentation and should be revisited when Next.js ships a supported update.
+
+## Confirmed issues and fixes
+
+- Medium: final UI/API copy still referred to “Stage 7.” Fixed to describe the current deterministic MVP.
+- Medium: `AGENTS.md` inaccurately described a GPT-5.6 application Story Guide and retained stage-oriented language. Consolidated without weakening privacy, accuracy, scope or deployment safeguards.
+- Medium: final documentation lacked the complete architecture, journeys, deployment, audit and demo evidence requested for submission readiness. Consolidated and corrected.
+
+## Deployment readiness and limitations
+
+The build is Vercel-compatible; paths are repository-relative and case-correct; all dynamic paths generated; browser storage is client-guarded; `.env.local` is absent from Git; no database or secret is required. The Vercel CLI is not installed, so authentication and production verification have not been attempted. Use the Vercel GitHub import flow after explicit approval.
+
+Remaining limitations: browser-local device-specific storage; no production authentication, database, email, real verification, automated matching, payments, donations, financial or investment transactions, production safeguarding, multi-school tenancy or runtime OpenAI integration. Deployment, independent secondary-thread audit, demo video, `/feedback` and final submission remain pending.
+
+## Audit-history summary
+
+| Stage | Result |
+| --- | --- |
+| Stage 3 scaffold | Lint/typecheck, 3 tests and build passed |
+| Stage 6 landing and timeline | 8 tests, build and browser QA passed |
+| Stage 7 contribution and guidance | 14 tests, build, API and browser QA passed |
+| Stage 8 alumni and engagement | 23 tests, 33-page build and browser QA passed |
+| Stage 9 moderation and impact | 33 tests, 33-page build and browser QA passed |
+| Stages 10–11 final local audit | All checks and full acceptance journey passed; deployment pending |

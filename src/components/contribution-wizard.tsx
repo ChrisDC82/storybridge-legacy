@@ -206,7 +206,7 @@ export function ContributionWizard() {
       {step === 2 && guidance && (
         <div className="wizard-step-panel">
           <h3>2. Guided Story Mode</h3>
-          <div className="guide-warning"><strong>This is an editing aid, not a fact checker.</strong><p>{guidance.warning} Questions and draft suggestions are generated deterministically in this browser; no OpenAI request is made in Stage 7.</p></div>
+          <div className="guide-warning"><strong>This is an editing aid, not a fact checker.</strong><p>{guidance.warning} Questions and draft suggestions are generated deterministically in this browser; this MVP makes no OpenAI request.</p></div>
           <p>Answer any questions that help. Every response is optional, and you may skip this mode entirely.</p>
           <div className="question-list">
             {guidance.questions.map((question) => <div className="guided-question" key={question.id}><label htmlFor={`answer-${question.id}`}>{question.prompt}</label><p>{question.reason}</p><textarea id={`answer-${question.id}`} value={answers[question.id] ?? ""} onChange={(event) => setAnswers((current) => ({ ...current, [question.id]: event.target.value }))} maxLength={800} rows={3} /></div>)}

@@ -1,15 +1,15 @@
 # StoryBridge Legacy agent guide
 
-- Work only in `C:\Projects\AI Projects\StoryBridge Legacy`. Inspect this file and the repository before each major stage. Do not search OneDrive or reuse another project path.
-- StoryBridge Legacy is a Forward Ever Foundation Build Week project: a living digital time capsule and alumni-engagement platform that preserves Caribbean school history and turns diaspora relationships into brain circulation, mentorship and opportunity.
-- CIC/St. Mary's College is a proposed pilot only. Never claim approval, adoption or endorsement. Use fictional, generic or properly authorised demonstration data and label it clearly.
-- MVP stack: Next.js App Router, React, TypeScript, Tailwind CSS, semantic accessible HTML, Vercel-compatible configuration, local seed data and server-only OpenAI integration with a deterministic fallback.
-- Required journeys: landing page, legacy timeline, moderated story contribution, GPT-5.6 Story Guide plus fallback, alumni directory, engagement expressions of interest, demo moderation and impact/scale page.
-- Out of scope: payments or investments, multi-tenancy, production authentication, private messaging, full matching, large uploads, OCR, native apps, identity verification and production safeguarding infrastructure.
-- Preserve contributor voice; never invent history. Label uncertainty, verification status, fictional records and AI/fallback mode. Require human review before submission.
-- Protect privacy and young people. Never expose contributor email, secrets, private student/alumni data or unauthorised school material. Do not put API keys client-side.
-- Design for mobile first with warm, trustworthy, archive-inspired restraint, accessible contrast, keyboard support, clear hierarchy and explicit loading, empty, error and success states.
-- After each stage: run lint, typecheck, tests and production build when appropriate; inspect routes, controls, responsiveness, accessibility, privacy, secrets, wording, console and hydration behavior; fix confirmed issues and retest.
-- Keep `README.md`, `CHANGELOG.md`, `BUILD_WEEK_EVIDENCE.md`, acceptance tests and audit records accurate. Never mark untested work as passed.
-- Audit before completion. A stage is complete only when its journey works, checks pass, no blocker remains and documentation reflects reality. Do not initialize Git, commit, connect a remote or deploy without the requested stage approval.
-- This Next.js version may differ from prior knowledge. Read relevant guidance in `node_modules/next/dist/docs/` before changing framework conventions and heed deprecations.
+- Work only in `C:\Projects\AI Projects\StoryBridge Legacy`. Inspect this guide and the repository before major work.
+- Purpose: a Forward Ever Foundation Build Week MVP that preserves Caribbean school memory and reconnects local and diaspora alumni around mentorship, knowledge and opportunity.
+- CIC/St. Mary's College is a proposed pilot only. Never claim approval, adoption, partnership or endorsement. Competition records and profiles are fictional demonstration data and must remain clearly labelled.
+- Preserve the completed MVP scope: landing page, Legacy Timeline, story contribution, deterministic Guided Story Mode, browser-local submissions, Alumni Directory, engagement interests, demonstration moderation, Impact page, branding, tests and evidence.
+- Do not add databases, production authentication, payments, investments, email delivery, private messaging, automated matching, identity verification, large uploads, OCR, native apps or major scope without approval.
+- Preserve contributor voice. Never invent history; expose uncertainty and verification status. Contributors review drafts before submission, and human moderation is required before any possible public publication.
+- Protect privacy and young people. Never expose emails, secrets, private student/alumni data or unauthorised school material. Do not request confidential data or put API keys client-side.
+- The MVP uses deterministic Guided Story Mode and requires no OpenAI key. Any future OpenAI integration must be separately approved, isolated server-side and retain a deterministic fallback.
+- Maintain mobile-first, semantic, accessible HTML with keyboard support, visible focus, sufficient contrast, labelled controls, associated errors, live status, reduced-motion support and explicit empty/error/success states.
+- Before completion run lint, type checking, all tests and a production build. Inspect every affected route, responsiveness, accessibility, privacy, secrets, wording, console and hydration behaviour; fix confirmed issues and retest.
+- Keep `README.md`, `CHANGELOG.md`, `BUILD_WEEK_EVIDENCE.md`, `ACCEPTANCE_TEST.md`, `AUDIT_REPORT.md` and `DEMO_GUIDE.md` accurate. Never mark untested work as passed or invent deployment/submission evidence.
+- Deployment requires a clean build, no required secrets, correct case-sensitive assets, generated dynamic routes and explicit approval. Never deploy, commit, push or expand scope without authorization.
+- For Next.js convention changes, consult the installed documentation in `node_modules/next/dist/docs/` and heed current deprecations.

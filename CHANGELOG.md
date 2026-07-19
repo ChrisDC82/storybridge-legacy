@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-07-18 — Stages 10–11: final audit and deployment readiness
+
+- Final documentation: completed the README overview, inspiration, journeys, architecture, setup, deterministic-guidance explanation, Codex/GPT-5.6 evidence, human decisions, safeguards, moderation, Vercel instructions, limitations and roadmap; consolidated acceptance, audit, demo and agent guidance.
+- Final audit: all 29 public/detail page routes and the Story Guide API were reviewed; the complete fictional user journey passed; 35 page/width checks covered 320px, 375px, 768px, 1024px and 1280px; console, hydration, privacy, accuracy, accessibility, fundraising, investment and storage boundaries passed.
+- Final fixes: removed obsolete “Stage 7” wording from current UI/API responses and corrected the agent guide so it no longer implies a runtime GPT-5.6 Story Guide.
+- Automated verification: lint and TypeScript passed; 33/33 tests passed; the Next.js 16.2.10 production build generated 33 pages; the project-wide credential-pattern scan found no matches.
+- Dependency review: 2 moderate, 0 high and 0 critical findings remain at `next@16.2.10 → postcss@8.4.31`. Latest stable Next.js pins the same version and npm offers only an incompatible downgrade, so no forced fix was applied.
+- Deployment: repository preparation passed, but Vercel CLI/authentication and production deployment verification remain pending explicit approval. No deployment URL is claimed.
+- Known limitations: browser-local storage; deterministic rather than runtime OpenAI guidance; no production authentication, database, email, real verification, transactions, production safeguarding or deployment yet.
+
 ## 2026-07-18 — Stage 9: demonstration moderation and impact roadmap
 
 - Features added: browser-local Demonstration Admin Dashboard; truthful moderation summary; accessible story review; reversible Pending review, Approved, More information requested and Rejected states; required notes for requests/rejections; timestamps and retained history; local-only approved archive preview; independent moderation and story resets; and an eight-section Impact narrative with a four-stage roadmap.

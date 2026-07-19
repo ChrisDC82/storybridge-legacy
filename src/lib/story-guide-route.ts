@@ -7,7 +7,7 @@ export function getStoryGuideStatus(environment: Record<string, string | undefin
     status: "ready",
     mode: "deterministic-fallback",
     openAIConfigured: Boolean(environment.OPENAI_API_KEY && environment.OPENAI_STORY_MODEL),
-    note: "Stage 7 does not call OpenAI. Guidance is deterministic and must not be treated as verification.",
+    note: "This MVP does not call OpenAI. Guidance is deterministic and must not be treated as verification.",
   };
 }
 
