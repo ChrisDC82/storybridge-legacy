@@ -218,6 +218,48 @@ p { margin-top: 0; }
 .submission-summary dd { margin: .15rem 0 0; overflow-wrap: anywhere; }
 .draft-preview { padding: 1rem; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); }
 
+.circulation-section { background: var(--white); border-bottom: 1px solid var(--line); }
+.directory-shell { padding-block: clamp(3rem, 7vw, 6rem); }
+.directory-controls { margin-bottom: 2.5rem; padding: clamp(1.25rem, 4vw, 2rem); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.alumni-filter-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.directory-search { grid-column: span 2; }
+.alumni-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.alumni-card { min-width: 0; padding: 1.35rem; background: var(--white); border: 1px solid var(--line); border-top: .3rem solid var(--teal); box-shadow: 0 8px 24px rgba(6, 29, 75, .06); }
+.alumni-card-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; align-items: start; }
+.alumni-card-head h3 { margin-bottom: .3rem; font-size: 1.45rem; }
+.alumni-card-head p:last-child { color: var(--muted); font-size: .88rem; }
+.alumni-initials { display: grid; place-items: center; width: 3.5rem; height: 3.5rem; flex: 0 0 auto; background: var(--navy); color: #f2bd52; border-radius: 50%; font-family: Georgia, serif; font-size: 1.15rem; font-weight: 800; }
+.alumni-card-facts { display: grid; grid-template-columns: .55fr 1.2fr 1.2fr; gap: .6rem; margin: 1rem 0; padding-block: .8rem; border-block: 1px solid var(--line); }
+.alumni-card-facts dt { color: var(--muted); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.alumni-card-facts dd { margin: .1rem 0 0; overflow-wrap: anywhere; font-size: .8rem; }
+.support-heading { margin-bottom: .5rem; color: var(--navy); font-size: .78rem; font-weight: 800; text-transform: uppercase; }
+.profile-detail-heading { display: flex; gap: 1.5rem; align-items: center; max-width: 900px; }
+.profile-detail-heading h1 { margin-bottom: .5rem; }
+.alumni-initials-large { width: 6rem; height: 6rem; font-size: 2rem; }
+.story-body blockquote { margin: 1rem 0; padding: 1rem 1.25rem; color: var(--navy); background: var(--white); border-left: .35rem solid var(--gold); font-family: Georgia, serif; font-size: 1.2rem; }
+.profile-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+.engagement-pathways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.engagement-pathways article { padding: 1.35rem; background: var(--white); border-top: .3rem solid var(--teal); box-shadow: 0 8px 24px rgba(6, 29, 75, .06); }
+.engagement-pathways article > span { color: var(--gold); font-size: .78rem; font-weight: 800; }
+.engagement-pathways h3 { margin: 1.5rem 0 .8rem; }
+.engagement-pathways ul { margin: 0; padding-left: 1.15rem; }
+.engagement-pathways li + li { margin-top: .4rem; }
+.funding-boundary { padding-block: clamp(3rem, 7vw, 6rem); background: var(--navy); color: #dce6f3; }
+.funding-boundary h2 { color: var(--white); }
+.funding-boundary .eyebrow { color: #f2bd52; }
+.funding-boundary .detail-link { color: #f2bd52; }
+.engagement-form-shell { padding-block: clamp(3rem, 7vw, 6rem); }
+.engagement-form-panel { padding: clamp(1.1rem, 4vw, 2.25rem); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.local-only-notice { margin: 1rem 0 1.5rem; padding: 1rem; background: #fff9e9; border-left: .35rem solid var(--gold); }
+.support-fieldset { min-width: 0; margin: 1.5rem 0 0; padding: 1rem; border: 1px solid var(--line); }
+.support-fieldset legend { padding: 0 .4rem; color: var(--navy); font-family: Georgia, serif; font-size: 1.35rem; font-weight: 800; }
+.support-fieldset > p { color: var(--muted); font-size: .85rem; }
+.support-fieldset.has-error { border-color: #a72626; }
+.support-checkbox-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
+.support-checkbox-grid label { display: grid; grid-template-columns: auto 1fr; gap: .65rem; align-items: start; min-height: 3rem; padding: .65rem; background: var(--paper); border: 1px solid var(--line); cursor: pointer; }
+.support-checkbox-grid input { width: 1.2rem; height: 1.2rem; margin-top: .15rem; accent-color: var(--teal); }
+
 .site-footer { padding: 3.5rem 0 1.25rem; background: #041634; color: #d6dfec; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr .7fr 1.1fr; gap: 2rem 4rem; }
 .footer-grid p { margin-bottom: .35rem; }
@@ -234,6 +276,8 @@ p { margin-top: 0; }
   .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr); gap: 2rem; }
   .filter-grid { grid-template-columns: 1fr 1fr; }
   .search-field { grid-column: 1 / -1; }
+  .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .engagement-pathways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 780px) {
@@ -256,6 +300,9 @@ p { margin-top: 0; }
   .footer-grid { gap: 2rem; }
   .contribute-layout { grid-template-columns: 1fr; }
   .contribution-notice { position: static; }
+  .alumni-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .directory-search { grid-column: 1 / -1; }
+  .profile-detail-heading { align-items: start; }
 }
 
 @media (max-width: 560px) {
@@ -277,6 +324,12 @@ p { margin-top: 0; }
   .wizard-steps { grid-template-columns: 1fr 1fr; }
   .form-grid, .submission-summary { grid-template-columns: 1fr; }
   .field-wide { grid-column: auto; }
+  .alumni-filter-grid, .alumni-grid, .engagement-pathways, .support-checkbox-grid { grid-template-columns: 1fr; }
+  .directory-search { grid-column: auto; }
+  .alumni-card-facts { grid-template-columns: 1fr 1fr; }
+  .profile-detail-heading { display: grid; }
+  .alumni-initials-large { width: 4.5rem; height: 4.5rem; font-size: 1.5rem; }
+  .profile-actions { display: grid; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

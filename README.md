@@ -6,19 +6,39 @@ StoryBridge Legacy is a living digital time capsule and alumni-engagement concep
 
 ## Current verified release
 
-Stage 7 includes a polished landing page; a searchable Legacy Timeline with ten fictional records and static detail pages; an accessible four-step story-contribution wizard; optional deterministic Guided Story Mode with contributor-controlled editing and skip controls; explicit consent and “Pending review” status; browser-local demonstration persistence and reset; and a Vercel-compatible `/api/story-guide` fallback that works without an API key.
+Stage 8 includes:
 
-Alumni, engagement and admin moderation features remain placeholders and were not built in Stage 7.
+- a polished landing page and searchable Legacy Timeline with ten fictional records;
+- an accessible four-step story-contribution wizard and deterministic Guided Story Mode;
+- a filterable Alumni Directory with 12 fictional profiles and statically generated detail routes;
+- text, industry, country, graduation-period, expertise, support-type and availability filtering;
+- four engagement pathways covering knowledge, access, institutional support and future enterprise;
+- a validated expression-of-interest form with private browser-local persistence, local IDs, timestamps, “Interest received” status and reset controls; and
+- explicit privacy, human-review, fundraising and responsible-investment boundaries.
 
-## Safeguards
+Admin moderation, production authentication and final Impact-page refinement remain later-stage work.
 
-The competition version uses fictional demonstration data. CIC/St. Mary’s College is a proposed pilot only; no approval, adoption or endorsement is claimed. Guided Story Mode never verifies history or invents missing facts, and all real contributions would require consent and human moderation. Contact email is never displayed in the public-facing submission summary.
+## Fictional profile policy
 
-Stage 7 stores demonstration submissions only in the current browser’s `localStorage`. Nothing is published, emailed or uploaded. Do not enter sensitive or real personal information.
+Every competition profile and story is fictional demonstration data. Profiles do not represent real CIC alumni, employers, awards, availability or professional claims. Initials-based placeholders avoid remote imagery and unlicensed headshots.
+
+CIC/St. Mary’s College is a proposed pilot only; no approval, adoption, partnership or endorsement is claimed.
+
+## Brain drain to brain circulation
+
+Skilled migration can weaken direct institutional connections, but migration is not betrayal and overseas alumni are not inherently more valuable than local alumni. StoryBridge Legacy demonstrates how knowledge, relationships and opportunity can circulate across borders through mentorship, career guidance, programme support, fundraising readiness, international introductions and responsible enterprise conversations.
+
+Nothing in the demonstration guarantees mentorship, placements, scholarships, funding, donations, introductions or investment.
+
+## Local persistence and privacy
+
+Story contributions and engagement interests use separate `localStorage` keys. They remain only in the current browser and can be reset independently. Contact email is retained privately in the local record but omitted from public-safe confirmations. Nothing is emailed, uploaded, published or transmitted externally.
+
+Do not enter real or sensitive personal information.
 
 ## Technology
 
-Next.js App Router, React, TypeScript, Tailwind CSS, ESLint and Vercel-compatible route handlers. No Stage 7 dependency was added.
+Next.js App Router, React, TypeScript, Tailwind CSS, ESLint and Vercel-compatible route handlers. Stage 8 added no dependency.
 
 ## Local setup
 
@@ -33,14 +53,14 @@ Open `http://localhost:3000`.
 
 ## Environment variables
 
-The deterministic Stage 7 guide requires no environment variables. `.env.example` contains empty, server-only placeholders for a separately approved future integration:
+The current deterministic Story Guide requires no environment variables. `.env.example` contains empty server-only placeholders for a separately approved future integration:
 
 | Variable | Purpose |
 | --- | --- |
 | `OPENAI_API_KEY` | Optional future server-only key; never expose it client-side |
 | `OPENAI_STORY_MODEL` | Optional future server-side Story Guide model |
 
-No OpenAI request is made by the Stage 7 application.
+No OpenAI request is made by the current application.
 
 ## Verification
 
@@ -55,15 +75,19 @@ Manual results are recorded in `ACCEPTANCE_TEST.md` and `AUDIT_REPORT.md`.
 
 ## How Codex and GPT-5.6 were used
 
-Codex supported implementation, testing, browser QA, audit repair and documentation. The user interface reported **GPT-5.6 Sol, Medium reasoning, Standard speed**; runtime metadata did not independently expose the exact variant. This Build Week development-session model is distinct from the application’s deterministic Guided Story Mode, which makes no OpenAI API call in Stage 7.
+Codex supported architecture, implementation, tests, browser QA, audit repair and documentation. The user interface reported **GPT-5.6 Sol, Medium reasoning, Standard speed**; runtime metadata did not independently expose the exact variant. The development-session model is distinct from the application’s deterministic Guided Story Mode.
+
+## Fundraising and investment boundaries
+
+The product may explain how alumni reconnection can create foundations for scholarships, programme sponsorship, equipment support, diaspora philanthropy, fundraising and future responsible investment introductions. It does not collect money, present financial products, promise returns, claim investors or partners, or present investment opportunities to minors.
 
 ## MVP limitations
 
-There is no server database, production authentication, production moderation workflow, email delivery, media upload, OpenAI runtime integration, payment or investment flow, multi-school tenancy, private messaging, full matching, OCR or native app. Local data is browser-specific and can be cleared by the user or browser.
+There is no server database, production authentication, real alumni verification, automated matching, private messaging, email delivery, payment or donation collection, investment transaction, media upload, multi-school tenancy, OCR or native app. Local data is browser-specific and can be cleared by the user or browser.
 
 ## Deployment
 
-The application is designed for Vercel, but deployment is outside Stage 7.
+The application is designed for Vercel, but deployment remains outside Stage 8.
 
 ## Licence
 

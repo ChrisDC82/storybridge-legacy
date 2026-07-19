@@ -61,8 +61,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <div>
               <p className="footer-heading">Trust the record</p>
               <p className="footer-small">
-                Demonstration stories are fictional. Real contributions will require consent,
-                moderation and careful historical review.
+                Demonstration stories and alumni profiles are fictional. Real participation will require consent,
+                moderation and careful review.
               </p>
             </div>
           </div>

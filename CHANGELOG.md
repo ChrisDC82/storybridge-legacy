@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-18 — Stage 8: alumni directory and engagement pathways
+
+- Features added: 12 fictional alumni profiles; seven directory search/filter dimensions; active-filter and results feedback; reset and no-results states; 12 statically generated accessible profile pages; four engagement pathway groups; validated expression-of-interest form; separate local persistence, private contact storage, public-safe confirmation and reset.
+- Safeguards added: fictional-profile labels, equal local/diaspora positioning, no-guarantee language, no contact buttons for fictional people, private email treatment, consent, and explicit fundraising, philanthropy, investment and minor-safeguarding boundaries.
+- Issues fixed: ordered graduation-period choices from newest to oldest and expanded the shared footer notice to cover fictional alumni profiles.
+- Verification: lint, TypeScript, 23 automated tests and a 33-page production build passed; browser QA covered all filters, combined/reset/empty states, profile navigation, complete form validation/submission, persistence/reset, mobile menu, three responsive widths, overflow, console and hydration behavior.
+- Dependency audit: 2 moderate, 0 high and 0 critical findings remain in Next.js’s pinned PostCSS build dependency; npm proposes only an incompatible major downgrade, so no forced fix was applied.
+- Known limitations: all profiles and offers are fictional; interest records are browser-local; there is no matching, messaging, email, server persistence, authentication, payment, donation, investment transaction or real verification.
+
 ## 2026-07-18 — Stage 7: story contribution and guided drafting
 
 - Features added: accessible four-step contribution wizard; field, draft and consent validation; deterministic context-sensitive questions; skippable and refreshable Guided Story Mode; contributor-editable suggested draft; local submission ID, timestamp and “Pending review” status; browser-local persistence and reset; safe GET/POST fallback API behavior without an OpenAI key.

@@ -2,9 +2,9 @@
 
 Use fictional information throughout. CIC/St. Mary’s College is only the proposed pilot; no institutional endorsement is claimed.
 
-1. **0:00–0:30 — Purpose:** Open the landing page and explain preservation, connection and brain circulation.
-2. **0:30–1:00 — Legacy:** Filter or search the Legacy Timeline and open a visibly fictional detail record.
-3. **1:00–1:35 — Enter a memory:** Open `/contribute`, point out local-only storage and privacy notices, then enter a fictional 80+ character memory with “Not sure” as the year.
-4. **1:35–2:05 — Guide without invention:** Show why context-sensitive questions appeared. Answer one, create the suggested draft and explain that the guide used only submitted details and did not verify history. Mention that guidance can also be skipped.
-5. **2:05–2:35 — Human control:** Edit the final draft, confirm review, show that email is not in the review summary, provide consent and submit locally.
-6. **2:35–3:00 — Moderation and limits:** Show the local ID and “Pending review” status, refresh to demonstrate persistence, then reset the demo data. Clarify that admin moderation, server storage, OpenAI runtime integration and deployment are later-stage work.
+1. **0:00–0:25 — Purpose:** Open the landing page and explain preservation, reconnection and brain circulation.
+2. **0:25–0:50 — Legacy:** Search the fictional Legacy Timeline and open a demonstration story.
+3. **0:50–1:20 — Contribute:** Show the local-only contribution notice, optional guided questions, contributor review and “Pending review” status.
+4. **1:20–2:00 — Reconnect:** Open the Alumni Directory. Filter by location and support type, point out the balanced local/diaspora copy, and open a fictional profile. Explain that the CTA offers a similar form—it does not contact the fictional person.
+5. **2:00–2:40 — Create opportunity:** Open the engagement page, show the four pathways and responsible financial boundaries, then save a fictional expression of interest. Point out its local ID, “Interest received” status and private email treatment.
+6. **2:40–3:00 — Limits and trust:** Refresh to demonstrate local persistence, reset the record, and clarify that mentorship, funding, placements and investment are never guaranteed. Admin moderation, authentication, server storage, payments and deployment remain later-stage work.
