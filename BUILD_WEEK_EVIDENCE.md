@@ -58,4 +58,4 @@
 - Manual evidence: 29 public/detail routes passed; the complete fictional user journey passed; 35 primary-route responsive checks at 320/375/768/1024/1280px found no overflow, off-screen controls or broken images; console, warning and hydration counts were all 0; acceptance-test local records were removed through UI controls.
 - Audit evidence: no blocking/high-priority issue remained. Three safe medium documentation/wording issues were corrected. Dependency audit remained 2 moderate, 0 high and 0 critical at Next.js’s pinned PostCSS build path, with no safe compatible update.
 - Deployment evidence: local Vercel readiness passed. Vercel CLI is not installed; production deployment, URL and production browser verification remain pending explicit approval and authentication.
-- Final readiness commit: _Pending bounded commit._
+- Final readiness commit: `057115b1e7c2c871fa2d37c9a0d242eda3d854dc` — `chore: complete final audit and deployment readiness`, pushed to `origin/main` on 2026-07-18.
