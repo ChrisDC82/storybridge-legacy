@@ -19,10 +19,16 @@ test("story guide API route exposes a scaffold response", async () => {
   assert.doesNotMatch(source, /sk-[A-Za-z0-9_-]+/);
 });
 
+test("legacy detail route is present", async () => {
+  const source = await readFile("src/app/legacy/[slug]/page.tsx", "utf8");
+  assert.match(source, /generateStaticParams/);
+  assert.match(source, /Fictional demonstration record/);
+});
+
 test("shared layout includes navigation, main content and pilot notice", async () => {
   const source = await readFile("src/app/layout.tsx", "utf8");
   assert.match(source, /Primary navigation/);
   assert.match(source, /id="main-content"/);
   assert.match(source, /proposed pilot only/);
-  assert.match(source, /fictional demonstration data/);
+  assert.match(source, /fictional\s+demonstration data/);
 });

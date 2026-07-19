@@ -18,7 +18,9 @@ Migration does not have to mean permanent disconnection. Alumni abroad can keep 
 
 ## Features
 
-The planned MVP includes a landing page, legacy timeline, story contribution and AI Story Guide, alumni directory, engagement opportunities, demonstration moderation and an impact/scale page. Stage 3 currently provides only the verified route scaffold and placeholder content.
+The verified Stage 6 release includes a polished public landing page and a functional Legacy Timeline with ten fictional demonstration records, text search, category and decade filters, active-filter feedback, reset and no-results states, and statically generated detail pages. Story contribution, the AI Story Guide, alumni functionality, engagement workflows and moderation actions remain clearly labelled placeholders for later stages.
+
+The approved StoryBridge Legacy logo is stored unchanged at `public/branding/storybridge-legacy-logo.png` and used responsively without remote image dependencies.
 
 ## Technology
 

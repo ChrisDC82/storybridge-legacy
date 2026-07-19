@@ -6,6 +6,7 @@ Only mark a checkbox after direct verification.
 
 - [x] `/`
 - [x] `/legacy`
+- [x] `/legacy/[slug]` demonstration detail pages
 - [x] `/contribute`
 - [x] `/alumni`
 - [x] `/engage`
@@ -17,7 +18,7 @@ Only mark a checkbox after direct verification.
 
 ## Product journeys
 
-- [ ] Timeline filters
+- [x] Timeline search, filters, active state, reset and no-results state
 - [ ] Story contribution
 - [ ] Required-field validation and errors
 - [ ] AI Story Guide
@@ -29,7 +30,7 @@ Only mark a checkbox after direct verification.
 ## Quality and release
 
 - [ ] Email addresses remain private
-- [ ] Keyboard and screen-reader basics
+- [x] Keyboard and screen-reader basics for Stage 6 navigation, filters and record links
 - [x] Responsive mobile layout
 - [x] Responsive desktop layout
 - [x] No console or hydration errors
