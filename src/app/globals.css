@@ -260,6 +260,74 @@ p { margin-top: 0; }
 .support-checkbox-grid label { display: grid; grid-template-columns: auto 1fr; gap: .65rem; align-items: start; min-height: 3rem; padding: .65rem; background: var(--paper); border: 1px solid var(--line); cursor: pointer; }
 .support-checkbox-grid input { width: 1.2rem; height: 1.2rem; margin-top: .15rem; accent-color: var(--teal); }
 
+.admin-shell { padding-block: clamp(3rem, 7vw, 6rem); }
+.admin-summary, .admin-queue, .approved-preview, .admin-reset-panel { margin-bottom: 2rem; padding: clamp(1.1rem, 4vw, 2rem); background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.admin-summary h2, .admin-queue h2, .approved-preview h2, .admin-reset-panel h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); }
+.admin-metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; margin-top: 1.5rem; background: var(--line); border: 1px solid var(--line); }
+.admin-metrics div { display: grid; align-content: center; min-height: 7rem; padding: 1rem; background: var(--paper); }
+.admin-metrics strong { color: var(--navy); font-family: Georgia, serif; font-size: 2rem; }
+.admin-metrics span { color: var(--muted); font-size: .76rem; font-weight: 800; text-transform: uppercase; }
+.admin-live-status { min-height: 1.6rem; margin: 1rem 0 0; color: var(--teal-dark); font-weight: 700; }
+.admin-submission-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.admin-submission-card { min-width: 0; border: 1px solid var(--line); border-top: .3rem solid var(--gold); }
+.submission-card-heading { display: flex; justify-content: space-between; gap: 1.5rem; padding: 1.25rem; }
+.submission-card-heading h3 { margin-bottom: .35rem; font-size: 1.55rem; }
+.status-badge { flex: 0 0 auto; align-self: start; margin: 0; padding: .55rem .7rem; background: #e4efed; color: var(--navy); }
+.status-badge span { display: block; color: var(--muted); font-size: .65rem; font-weight: 800; text-transform: uppercase; }
+.admin-record-facts { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; background: var(--paper); border-block: 1px solid var(--line); }
+.admin-record-facts div { padding: .75rem; border-right: 1px solid var(--line); }
+.admin-record-facts div:last-child { border-right: 0; }
+.admin-record-facts dt { color: var(--muted); font-size: .68rem; font-weight: 800; text-transform: uppercase; }
+.admin-record-facts dd { margin: .15rem 0 0; overflow-wrap: anywhere; font-size: .82rem; }
+.review-details summary { cursor: pointer; padding: 1rem 1.25rem; color: var(--teal-dark); font-weight: 800; }
+.review-details[open] summary { border-bottom: 1px solid var(--line); }
+.review-comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+.review-comparison section { min-width: 0; padding: 1.25rem; background: var(--white); }
+.review-comparison h4, .moderation-history h4 { margin: 0 0 .6rem; color: var(--navy); font-family: Georgia, serif; font-size: 1.05rem; }
+.review-comparison p { margin-bottom: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.moderation-history { padding: 1.25rem; background: var(--paper); border-top: 1px solid var(--line); }
+.moderation-history ol { margin: 0; padding-left: 1.3rem; }
+.moderation-history li + li { margin-top: .55rem; }
+.moderation-history li p { margin: .2rem 0 0; }
+.moderation-controls { display: grid; gap: .45rem; padding: 1.25rem; border-top: 1px solid var(--line); }
+.moderation-controls > label { color: var(--navy); font-weight: 800; }
+.moderation-controls > label span { color: var(--muted); font-size: .78rem; font-weight: 400; }
+.moderation-controls textarea { width: 100%; padding: .7rem .75rem; resize: vertical; border: 1px solid #8b999c; }
+.moderation-actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .7rem; }
+.moderation-actions button:disabled { cursor: not-allowed; opacity: .55; }
+.approved-preview { background: #eef7f6; border-top: .35rem solid var(--teal); }
+.approved-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.approved-preview-grid article { padding: 1rem; background: var(--white); border: 1px solid var(--line); }
+.approved-preview-grid article > p:not(.demo-label) { white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-reset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.admin-reset-grid > div { padding: 1rem; background: var(--paper); border: 1px solid var(--line); }
+.reset-confirm { display: grid; grid-template-columns: auto 1fr; gap: .55rem; margin-bottom: 1rem; font-weight: 700; }
+.reset-confirm input { width: 1.2rem; height: 1.2rem; margin-top: .2rem; accent-color: var(--teal); }
+.danger-button { background: #8e1d1d; border-color: #8e1d1d; color: var(--white); }
+
+.impact-challenge, .impact-engagement { background: var(--white); }
+.impact-circulation { padding-block: clamp(3.5rem, 7vw, 6rem); background: var(--paper-deep); border-block: 1px solid var(--line); }
+.impact-opportunity-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.impact-opportunity-grid article { padding: 1.3rem; background: var(--white); border-top: .3rem solid var(--teal); }
+.impact-opportunity-grid h3 { margin-bottom: .7rem; }
+.impact-investment { padding-block: clamp(3.5rem, 7vw, 6rem); background: var(--navy); color: #dce6f3; }
+.impact-investment h2 { color: var(--white); }
+.impact-investment .eyebrow { color: #f2bd52; }
+.roadmap-section { background: var(--paper); }
+.roadmap-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 2.5rem 0 0; padding: 0; list-style: none; }
+.roadmap-list li { padding: 1.3rem; background: var(--white); border: 1px solid var(--line); border-top: .3rem solid var(--gold); }
+.roadmap-list li > span { color: var(--teal-dark); font-size: .75rem; font-weight: 800; text-transform: uppercase; }
+.roadmap-list h3 { margin: 1.5rem 0 .7rem; }
+.sustainability-section { padding-block: clamp(3.5rem, 7vw, 6rem); background: var(--teal-dark); color: #e8f6f5; }
+.sustainability-section h2 { color: var(--white); }
+.sustainability-section .eyebrow { color: #ffd06d; }
+.safeguard-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 2.5rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.safeguard-grid li { display: grid; grid-template-columns: 2.5rem 1fr; gap: .7rem; padding: 1rem; border-bottom: 1px solid var(--line); }
+.safeguard-grid li span { color: var(--gold); font-weight: 800; }
+.impact-closing { padding-block: clamp(3.5rem, 7vw, 6rem); background: #041634; color: #dce6f3; }
+.impact-closing h2 { color: var(--white); }
+.impact-closing .eyebrow { color: #f2bd52; }
+
 .site-footer { padding: 3.5rem 0 1.25rem; background: #041634; color: #d6dfec; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr .7fr 1.1fr; gap: 2rem 4rem; }
 .footer-grid p { margin-bottom: .35rem; }
@@ -278,6 +346,8 @@ p { margin-top: 0; }
   .search-field { grid-column: 1 / -1; }
   .alumni-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .engagement-pathways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .impact-opportunity-grid, .roadmap-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 780px) {
@@ -303,6 +373,9 @@ p { margin-top: 0; }
   .alumni-filter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .directory-search { grid-column: 1 / -1; }
   .profile-detail-heading { align-items: start; }
+  .admin-record-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-record-facts div { border-bottom: 1px solid var(--line); }
+  .review-comparison, .admin-reset-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -330,6 +403,10 @@ p { margin-top: 0; }
   .profile-detail-heading { display: grid; }
   .alumni-initials-large { width: 4.5rem; height: 4.5rem; font-size: 1.5rem; }
   .profile-actions { display: grid; }
+  .admin-metrics, .impact-opportunity-grid, .roadmap-list, .safeguard-grid, .approved-preview-grid { grid-template-columns: 1fr; }
+  .submission-card-heading, .moderation-actions { display: grid; }
+  .status-badge { justify-self: start; }
+  .admin-record-facts { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

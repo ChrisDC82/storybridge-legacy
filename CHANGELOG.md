@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-18 — Stage 9: demonstration moderation and impact roadmap
+
+- Features added: browser-local Demonstration Admin Dashboard; truthful moderation summary; accessible story review; reversible Pending review, Approved, More information requested and Rejected states; required notes for requests/rejections; timestamps and retained history; local-only approved archive preview; independent moderation and story resets; and an eight-section Impact narrative with a four-stage roadmap.
+- Safeguards added: contact emails remain hidden, no email or publication is implied, story deletion does not touch engagement-interest storage, and impact copy states that the pilot, rollout, funding, sustainability and investment concepts are proposals rather than commitments.
+- Issues fixed during verification: normalized Stage 7 records for the expanded moderation model; changed a runtime type import to a Node-compatible relative import; corrected two overly broad test assertions. No browser UI, console, hydration or responsive-layout defects were confirmed.
+- Verification: lint, TypeScript, 33 automated tests and a 33-page production build passed. Browser QA covered empty and populated moderation states, note validation, all transitions, refresh persistence, history, preview, both resets, cross-storage isolation, mobile navigation, focusability and 375px/768px/1280px layouts.
+- Dependency audit: 2 moderate, 0 high and 0 critical findings remain in Next.js’s pinned PostCSS build dependency; npm proposes only an incompatible major downgrade, so no forced fix was applied.
+- Known limitations: demonstration-only local storage, no production authentication, database, email, public archive publication, verified institutional adoption, fundraising transaction, investment transaction or deployment.
+
 ## 2026-07-18 — Stage 8: alumni directory and engagement pathways
 
 - Features added: 12 fictional alumni profiles; seven directory search/filter dimensions; active-filter and results feedback; reset and no-results states; 12 statically generated accessible profile pages; four engagement pathway groups; validated expression-of-interest form; separate local persistence, private contact storage, public-safe confirmation and reset.

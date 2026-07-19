@@ -55,10 +55,28 @@ export type GuidanceResult = {
   warning: string;
 };
 
+export const moderationStatuses = [
+  "Pending review",
+  "Approved",
+  "More information requested",
+  "Rejected",
+] as const;
+
+export type ModerationStatus = (typeof moderationStatuses)[number];
+
+export type ModerationHistoryEntry = {
+  status: ModerationStatus;
+  updatedAt: string;
+  note?: string;
+};
+
 export type LocalSubmission = {
   id: string;
   createdAt: string;
-  status: "Pending review";
+  status: ModerationStatus;
+  updatedAt: string;
+  moderationNote?: string;
+  moderationHistory: ModerationHistoryEntry[];
   contributor: {
     fullName: string;
     email: string;
@@ -80,7 +98,7 @@ export type LocalSubmission = {
 export type PublicSubmissionSummary = {
   id: string;
   createdAt: string;
-  status: "Pending review";
+  status: ModerationStatus;
   title: string;
   category: LegacyCategory;
   approvedDraft: string;

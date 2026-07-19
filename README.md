@@ -6,7 +6,7 @@ StoryBridge Legacy is a living digital time capsule and alumni-engagement concep
 
 ## Current verified release
 
-Stage 8 includes:
+Stage 9 includes:
 
 - a polished landing page and searchable Legacy Timeline with ten fictional records;
 - an accessible four-step story-contribution wizard and deterministic Guided Story Mode;
@@ -15,8 +15,10 @@ Stage 8 includes:
 - four engagement pathways covering knowledge, access, institutional support and future enterprise;
 - a validated expression-of-interest form with private browser-local persistence, local IDs, timestamps, “Interest received” status and reset controls; and
 - explicit privacy, human-review, fundraising and responsible-investment boundaries.
+- a browser-local Demonstration Admin Dashboard with reversible moderation states, required notes, timestamps, history, truthful counts and a local-only approved preview; and
+- an eight-part Impact narrative covering brain circulation, a staged roadmap, possible sustainability routes and governance safeguards without claiming deployment, funding or endorsement.
 
-Admin moderation, production authentication and final Impact-page refinement remain later-stage work.
+Production authentication, server persistence, real publication and deployment remain later-stage work.
 
 ## Fictional profile policy
 
@@ -38,7 +40,7 @@ Do not enter real or sensitive personal information.
 
 ## Technology
 
-Next.js App Router, React, TypeScript, Tailwind CSS, ESLint and Vercel-compatible route handlers. Stage 8 added no dependency.
+Next.js App Router, React, TypeScript, Tailwind CSS, ESLint and Vercel-compatible route handlers. Stage 9 added no dependency.
 
 ## Local setup
 
@@ -87,7 +89,7 @@ There is no server database, production authentication, real alumni verification
 
 ## Deployment
 
-The application is designed for Vercel, but deployment remains outside Stage 8.
+The application is designed for Vercel, but deployment remains outside Stage 9.
 
 ## Licence
 

@@ -29,7 +29,9 @@ Only mark a checkbox after direct verification.
 - [x] Guided Story Mode questions, refresh, skip and contributor-controlled draft
 - [x] Deterministic fallback mode without an API key
 - [x] Local “Pending review” submission status and reset
-- [ ] Full admin moderation actions
+- [x] Full demonstration admin moderation actions, notes, history and local approved preview
+- [x] Moderation reset preserves stories; story reset preserves engagement-interest records
+- [x] Eight-section Impact narrative, proposal roadmap, safeguards and closing calls to action
 - [x] Alumni filters
 - [x] Engagement pathways
 

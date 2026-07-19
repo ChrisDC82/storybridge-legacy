@@ -1,4 +1,4 @@
-import type { ContributionFormData, LocalSubmission, PublicSubmissionSummary } from "@/types/contribution";
+import { moderationStatuses, type ContributionFormData, type LocalSubmission, type PublicSubmissionSummary } from "../types/contribution.ts";
 
 export const SUBMISSION_STORAGE_KEY = "storybridge-legacy-demo-submissions";
 
@@ -9,10 +9,24 @@ export function readLocalSubmissions(storage: StorageLike): LocalSubmission[] {
     const stored = storage.getItem(SUBMISSION_STORAGE_KEY);
     if (!stored) return [];
     const parsed: unknown = JSON.parse(stored);
-    return Array.isArray(parsed) ? (parsed as LocalSubmission[]) : [];
+    if (!Array.isArray(parsed)) return [];
+    return (parsed as LocalSubmission[]).map(normalizeLocalSubmission);
   } catch {
     return [];
   }
+}
+
+export function normalizeLocalSubmission(submission: LocalSubmission): LocalSubmission {
+  const status = moderationStatuses.includes(submission.status) ? submission.status : "Pending review";
+  const updatedAt = submission.updatedAt || submission.createdAt;
+  return {
+    ...submission,
+    status,
+    updatedAt,
+    moderationHistory: Array.isArray(submission.moderationHistory) && submission.moderationHistory.length
+      ? submission.moderationHistory
+      : [{ status, updatedAt, note: submission.moderationNote }],
+  };
 }
 
 export function createLocalSubmission(
@@ -22,10 +36,13 @@ export function createLocalSubmission(
   options: { id?: string; createdAt?: string } = {},
 ): LocalSubmission {
   const generatedId = options.id ?? `SBL-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
+  const createdAt = options.createdAt ?? new Date().toISOString();
   return {
     id: generatedId,
-    createdAt: options.createdAt ?? new Date().toISOString(),
+    createdAt,
     status: "Pending review",
+    updatedAt: createdAt,
+    moderationHistory: [{ status: "Pending review", updatedAt: createdAt }],
     contributor: {
       fullName: data.fullName.trim(),
       email: data.email.trim(),
