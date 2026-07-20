@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-07-20 — production verification and independent-audit corrections
+
+- Deployment: verified https://storybridge-legacy.vercel.app and recorded the 2026-07-20 live verification of primary routes, Legacy interactions, contribution/guidance/persistence, moderation/preview, Alumni, engagement, Impact, Story Guide GET, responsive behaviour and browser console.
+- Accessibility fix: connected every visible contribution validation error to its control with stable IDs, conditional `aria-invalid` and helper-preserving `aria-describedby`; included final-draft review and consent checkboxes without changing validation rules.
+- Metadata fix: changed the route title to `Contribute a Story` so the root template appends the site name once.
+- Tests: added coverage for invalid/valid ARIA states, helper/error descriptions, checkbox error IDs and contribution metadata; lint and TypeScript passed, 35/35 tests passed, and the 33-page production build passed.
+- Focused QA: verified required/email/year/final-draft/review/consent errors, guided submission, admin approval and preview, exact title, 375px/1280px overflow, 0 console or hydration errors, local-record cleanup, a 0-match secret scan, and the unchanged 2-moderate PostCSS audit result.
+- Retained limitations: browser-local storage, deterministic guidance, no production authentication/database/email/transactions/runtime OpenAI, and the documented Next.js-pinned PostCSS advisories.
+
 ## 2026-07-18 — Stages 10–11: final audit and deployment readiness
 
 - Final documentation: completed the README overview, inspiration, journeys, architecture, setup, deterministic-guidance explanation, Codex/GPT-5.6 evidence, human decisions, safeguards, moderation, Vercel instructions, limitations and roadmap; consolidated acceptance, audit, demo and agent guidance.
@@ -7,8 +16,8 @@
 - Final fixes: removed obsolete “Stage 7” wording from current UI/API responses and corrected the agent guide so it no longer implies a runtime GPT-5.6 Story Guide.
 - Automated verification: lint and TypeScript passed; 33/33 tests passed; the Next.js 16.2.10 production build generated 33 pages; the project-wide credential-pattern scan found no matches.
 - Dependency review: 2 moderate, 0 high and 0 critical findings remain at `next@16.2.10 → postcss@8.4.31`. Latest stable Next.js pins the same version and npm offers only an incompatible downgrade, so no forced fix was applied.
-- Deployment: repository preparation passed, but Vercel CLI/authentication and production deployment verification remain pending explicit approval. No deployment URL is claimed.
-- Known limitations: browser-local storage; deterministic rather than runtime OpenAI guidance; no production authentication, database, email, real verification, transactions, production safeguarding or deployment yet.
+- Deployment at this stage: repository preparation passed; production deployment was completed and verified later on 2026-07-20.
+- Known limitations: browser-local storage; deterministic rather than runtime OpenAI guidance; no production authentication, database, email, real verification, transactions or production safeguarding.
 
 ## 2026-07-18 — Stage 9: demonstration moderation and impact roadmap
 

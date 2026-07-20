@@ -4,8 +4,8 @@ Use only the fictional data below. CIC/St. Mary’s College is the proposed pilo
 
 ## Before recording
 
-1. Open `/admin`, remove local story submissions, then open `/engage` and reset local interest records if either count is non-zero.
-2. Return to `/` and close the mobile menu. Use a private/demo browser profile if practical.
+1. Open https://storybridge-legacy.vercel.app/admin, remove local story submissions, then open `/engage` and reset local interest records if either count is non-zero.
+2. Return to https://storybridge-legacy.vercel.app and close the mobile menu. Use a private/demo browser profile if practical.
 3. Never show a real email, notification, password manager or browser account. The sample addresses use the reserved `.test` domain.
 
 ## Timed route order and script
@@ -39,6 +39,6 @@ Use only the fictional data below. CIC/St. Mary’s College is the proposed pilo
 - Do not claim CIC/St. Mary’s College approval, adoption or endorsement.
 - Do not claim runtime GPT-5.6, historical verification, automatic publication or production security.
 - Do not claim real alumni, partners, investors, donations, funding, placements, payments or returns.
-- Do not claim production deployment until the real Vercel URL has been verified and recorded.
+- Do not claim that deployment changes the documented browser-local, demonstration-only limitations.
 
 After recording, use the separate `/admin` and `/engage` reset controls to remove the fictional records.

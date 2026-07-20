@@ -4,6 +4,7 @@ import { test } from "node:test";
 import { emptyContributionForm } from "../src/types/contribution.ts";
 import { validateContributionDetails, validateFinalSubmission } from "../src/lib/contribution-validation.ts";
 import { buildSuggestedDraft, generateGuidance } from "../src/lib/guided-story.ts";
+import { getFieldAccessibility } from "../src/lib/field-accessibility.ts";
 import { createFallbackGuidance, getStoryGuideStatus } from "../src/lib/story-guide-route.ts";
 import { createLocalSubmission, readLocalSubmissions, resetLocalSubmissions, saveLocalSubmission, toPublicSubmissionSummary } from "../src/lib/submission-storage.ts";
 
@@ -87,4 +88,33 @@ test("contribution interface exposes the four-step, editable and skippable workf
   assert.match(source, /window\.localStorage/);
   assert.doesNotMatch(source, /console\./);
   assert.doesNotMatch(pageSource, /<main[\s>]/, "the shared layout owns the single main landmark");
+});
+
+test("contribution errors expose stable accessible descriptions without marking valid fields invalid", async () => {
+  assert.deepEqual(getFieldAccessibility("email", true, "Enter a valid email."), {
+    "aria-invalid": true,
+    "aria-describedby": "email-hint email-error",
+  });
+  assert.deepEqual(getFieldAccessibility("email", true), {
+    "aria-invalid": undefined,
+    "aria-describedby": "email-hint",
+  });
+  assert.deepEqual(getFieldAccessibility("storyTitle", false), {
+    "aria-invalid": undefined,
+    "aria-describedby": undefined,
+  });
+
+  const source = await readFile("src/components/contribution-wizard.tsx", "utf8");
+  for (const id of ["fullName", "email", "relationship", "schoolPeriod", "storyTitle", "eventYear", "category", "imageUrl", "roughMemory", "finalDraft", "draftReviewed", "consent"]) {
+    assert.match(source, new RegExp(`getFieldAccessibility\\("${id}"`), `${id} must receive accessible error props`);
+  }
+  assert.match(source, /id="draftReviewed-error"/);
+  assert.match(source, /id="consent-error"/);
+  assert.match(source, /id=\{`\$\{id\}-error`\}/, "standard field errors must use matching stable IDs");
+});
+
+test("contribution metadata relies on the root title template exactly once", async () => {
+  const pageSource = await readFile("src/app/contribute/page.tsx", "utf8");
+  assert.match(pageSource, /title: "Contribute a Story"/);
+  assert.doesNotMatch(pageSource, /Contribute a Story \| StoryBridge Legacy/);
 });

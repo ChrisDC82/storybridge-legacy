@@ -132,7 +132,11 @@ The dashboard is explicitly a demonstration and has no production authentication
 
 ## Deployment
 
-The repository is prepared for Vercel import and does not require environment variables, a database or server secrets.
+The production MVP is deployed at **https://storybridge-legacy.vercel.app**. Deployment and live verification were completed on 2026-07-20. The Vercel deployment requires no environment variables, database or server secrets.
+
+Live verification covered the primary routes, Legacy search/combined filters/detail navigation, contribution and deterministic Guided Story Mode, browser-local persistence, admin moderation and approved preview, Alumni filters/profiles, engagement submission, Impact page, Story Guide API GET, responsive layouts and browser console.
+
+For a fresh Vercel import:
 
 1. Sign in to Vercel and choose **Add New → Project**.
 2. Import `ChrisDC82/storybridge-legacy` from GitHub.
@@ -140,9 +144,6 @@ The repository is prepared for Vercel import and does not require environment va
 4. Leave environment variables empty for the MVP.
 5. Select **Deploy**.
 6. After deployment, verify every route, all static detail paths, `/api/story-guide`, branding, browser-local persistence, console output and responsive behaviour.
-7. Record the real production URL in `BUILD_WEEK_EVIDENCE.md` only after successful verification.
-
-Deployment has not yet been performed or claimed.
 
 ## Known MVP limitations
 
@@ -153,7 +154,7 @@ Deployment has not yet been performed or claimed.
 - No payment, donation, fundraising transaction, financial product or investment transaction
 - No production safeguarding infrastructure, multi-school tenancy, OCR or native app
 - Deterministic guidance rather than runtime OpenAI generation
-- Deployment and independent secondary-thread audit remain pending
+- Demo recording, `/feedback` and final Devpost submission remain pending
 
 ## Post-competition roadmap
 
@@ -161,7 +162,7 @@ Subject to evidence, permission, safeguarding and resources: validate a proposed
 
 ## Build Week evidence summary
 
-The project was created on 2026-07-18 and developed through bounded, human-approved stages covering scaffold, repository setup, landing/timeline, contribution/guidance, alumni/engagement, moderation/impact and final readiness. Each feature stage includes commit, automated-test, browser-QA, secret-scan and audit evidence in `BUILD_WEEK_EVIDENCE.md`, `CHANGELOG.md`, `ACCEPTANCE_TEST.md` and `AUDIT_REPORT.md`. Deployment URL, demo video, `/feedback` Session ID and final submission date remain explicit placeholders until those events occur.
+The project was created on 2026-07-18 and developed through bounded, human-approved stages covering scaffold, repository setup, landing/timeline, contribution/guidance, alumni/engagement, moderation/impact, final readiness and an independent final audit. Each feature stage includes commit, automated-test, browser-QA, secret-scan and audit evidence in `BUILD_WEEK_EVIDENCE.md`, `CHANGELOG.md`, `ACCEPTANCE_TEST.md` and `AUDIT_REPORT.md`. Production deployment was verified on 2026-07-20; demo video, `/feedback` Session ID and final Devpost submission date remain explicit placeholders.
 
 ## Licence
 

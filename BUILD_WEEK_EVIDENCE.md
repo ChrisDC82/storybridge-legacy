@@ -15,10 +15,11 @@
 - Stage 6 work: integrated the approved logo without modifying its source bytes; built the public landing narrative, trust and scale sections; added shared legacy types, ten fictional seed records, deterministic filtering, responsive timeline cards and ten static detail routes.
 - Stage 6 verification: SHA-256 confirmed the copied logo is byte-identical to the supplied file. Lint, TypeScript, 8 automated tests and production build passed. Browser QA at 375px and 1280px verified search, category and decade filters, combined filters, results count, active filters, no-results and reset states, detail navigation, mobile-menu closure, responsive overflow, semantic labels, console and hydration behavior.
 - Stage 6 commit: `e603ac633b4ef6188a82dc4cd37220bd53dae90c` — `feat: build landing page and legacy timeline`, pushed to `origin/main` on 2026-07-18.
-- Deployment URL: _Placeholder — not deployed._
+- Deployment URL: https://storybridge-legacy.vercel.app
+- Production deployment and live-verification date: 2026-07-20.
 - Demo video URL: _Placeholder._
 - `/feedback` Session ID: _Placeholder._
-- Final submission date: _Placeholder._
+- Final Devpost submission date: _Placeholder._
 
 ## Stage 7 — story contribution and guided drafting
 
@@ -57,5 +58,15 @@
 - Automated evidence: lint passed; TypeScript passed; 33/33 tests passed; Next.js 16.2.10 generated 33 pages; API GET/valid POST/invalid POST returned 200/200/400; project-wide credential/private-key scan returned 0 matches.
 - Manual evidence: 29 public/detail routes passed; the complete fictional user journey passed; 35 primary-route responsive checks at 320/375/768/1024/1280px found no overflow, off-screen controls or broken images; console, warning and hydration counts were all 0; acceptance-test local records were removed through UI controls.
 - Audit evidence: no blocking/high-priority issue remained. Three safe medium documentation/wording issues were corrected. Dependency audit remained 2 moderate, 0 high and 0 critical at Next.js’s pinned PostCSS build path, with no safe compatible update.
-- Deployment evidence: local Vercel readiness passed. Vercel CLI is not installed; production deployment, URL and production browser verification remain pending explicit approval and authentication.
+- Deployment evidence at the close of this stage: local Vercel readiness passed; production deployment was still pending and was subsequently completed and verified on 2026-07-20 as recorded below.
 - Final readiness commit: `057115b1e7c2c871fa2d37c9a0d242eda3d854dc` — `chore: complete final audit and deployment readiness`, pushed to `origin/main` on 2026-07-18.
+
+## Independent final audit and bounded correction pass
+
+- Date: 2026-07-20.
+- Production evidence: the Vercel deployment at https://storybridge-legacy.vercel.app passed main-route checks; Legacy search, combined filters and detail navigation; contribution; deterministic Guided Story Mode; browser-local persistence; admin moderation; approved local archive preview; Alumni filters and profiles; engagement submission; Impact page; Story Guide API GET; responsive checks; and browser-console inspection.
+- Confirmed corrections: refreshed deployment evidence, added programmatic contribution-error associations, and corrected the duplicated contribution browser title without changing visible headings or validation rules.
+- Accessibility retest: every error-capable contribution field now uses a stable error ID, conditional `aria-invalid`, and `aria-describedby` retaining helper text where applicable. Final-draft review and consent checkboxes use matching error associations.
+- Correction verification: `npm run lint` and `npm run typecheck` passed; 35/35 automated tests passed; the Next.js 16.2.10 production build generated 33 pages. Focused browser QA on the corrected local build passed required-field, email, year, final-draft, draft-review and consent validation; guided drafting; valid local submission; admin visibility, approval and approved preview; the single-appended browser title; 375px and 1280px overflow checks; and console/hydration inspection with 0 errors or warnings. The fictional QA story was removed through the admin UI.
+- Correction audit: the project-wide credential/private-key pattern scan returned 0 matches and only `.env.example` was present. `npm audit --json` remained at 2 moderate, 0 high and 0 critical findings in Next.js 16.2.10's pinned PostCSS path; npm still proposes only the incompatible Next.js 9.3.3 downgrade, so no forced remediation was applied.
+- Correction commit: _Pending bounded commit._

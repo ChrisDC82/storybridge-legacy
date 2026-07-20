@@ -2,6 +2,8 @@
 
 Audit date: 2026-07-18.
 
+Production verification: 2026-07-20 at https://storybridge-legacy.vercel.app.
+
 Status key: `[x] Passed`, `[ ] Pending`, `N/A` Not applicable. No item currently has a confirmed failed status.
 
 ## Routes and navigation
@@ -44,7 +46,7 @@ Status key: `[x] Passed`, `[ ] Pending`, `N/A` Not applicable. No item currently
 - [x] Passed — one main landmark and one H1 on every audited page; no heading-level jumps on primary routes
 - [x] Passed — native links, buttons, inputs, selects, textareas and details/summary controls; no negative tab index or detected keyboard trap
 - [x] Passed — visible global `:focus-visible` indicator and accessible mobile navigation
-- [x] Passed — all form controls labelled; errors use `aria-invalid`, `aria-describedby`, alert summaries and live status regions
+- [x] Passed — all form controls labelled; contribution errors use stable IDs, conditional `aria-invalid`, retained helper/error `aria-describedby` associations, alert summaries and live status regions
 - [x] Passed — status meaning includes text and is not colour-only
 - [x] Passed — reduced-motion CSS disables smooth scrolling
 - [x] Passed — representative computed contrast audit; only disabled reset buttons fell below normal-text thresholds, which are exempt
@@ -70,12 +72,13 @@ Status key: `[x] Passed`, `[ ] Pending`, `N/A` Not applicable. No item currently
 
 - [x] Passed — ESLint, exit 0
 - [x] Passed — TypeScript, exit 0
-- [x] Passed — 33/33 automated tests
+- [x] Passed — 35/35 automated tests after the bounded correction pass
 - [x] Passed — Next.js 16.2.10 production build; 33 pages generated
 - [x] Passed — browser console: 0 errors, 0 warnings, 0 hydration messages
 - [x] Passed — project-wide credential-pattern scan: 0 matches
 - [x] Passed — dependency review completed: 2 moderate, 0 high, 0 critical
-- [ ] Pending deployment verification — Vercel production URL, production routes, assets, persistence and console
+- [x] Passed — focused correction QA at 375px and 1280px covered contribution ARIA validation, guided submission, admin approval/preview, exact browser title, overflow, cleanup and console/hydration inspection
+- [x] Passed — Vercel production deployment, primary routes, Legacy interactions, contribution/guidance/persistence, moderation/preview, Alumni, engagement, Impact, Story Guide GET, responsive layouts and console
 - [ ] Pending external evidence — demo video, `/feedback` Session ID and final submission confirmation
 
-Final local result: **Ready for deployment with documented limitations.**
+Final result: **Production deployment verified; ready for the remaining demo, feedback and Devpost steps with documented MVP limitations.**

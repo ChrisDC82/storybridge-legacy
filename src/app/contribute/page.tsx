@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContributionWizard } from "@/components/contribution-wizard";
 
 export const metadata: Metadata = {
-  title: "Contribute a Story | StoryBridge Legacy",
+  title: "Contribute a Story",
   description: "Use the local demonstration workflow to preserve, review and submit a fictional legacy story for human moderation.",
 };
 

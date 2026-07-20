@@ -1,10 +1,10 @@
 # Final audit report
 
-Audit date: 2026-07-18. Scope: complete StoryBridge Legacy MVP, final documentation, local production readiness and Vercel preparation. Production deployment remains pending approval.
+Primary audit date: 2026-07-18. Independent final audit and production-verification date: 2026-07-20. Scope: complete StoryBridge Legacy MVP, documentation, local checks, production deployment and bounded correction pass.
 
 ## Readiness summary
 
-The bounded MVP feature set is complete and locally verified. No blocking or high-priority issue remains. The application requires no API key, database, production authentication, payment service or email service. Final verdict: **Ready for deployment with documented limitations.**
+The bounded MVP feature set is complete and verified locally and at https://storybridge-legacy.vercel.app. No blocking or high-priority issue remains. The application requires no API key, database, production authentication, payment service or email service. Final verdict: **Production deployment verified; ready for the remaining submission steps with documented limitations.**
 
 ## Feature-completion matrix
 
@@ -19,7 +19,7 @@ The bounded MVP feature set is complete and locally verified. No blocking or hig
 | Demonstration moderation and approved local preview | Passed |
 | Impact and Scale narrative and safeguards | Passed |
 | Build Week documentation and evidence | Passed locally |
-| Vercel production deployment | Pending approval |
+| Vercel production deployment | Passed on 2026-07-20 |
 
 ## Routes and user journeys reviewed
 
@@ -31,11 +31,12 @@ The complete fictional journey passed: timeline search/filter/detail/reset; cont
 
 - ESLint: passed, exit 0.
 - TypeScript: passed, exit 0.
-- Automated tests: 33 passed, 0 failed, 0 skipped.
+- Automated tests: 35 passed, 0 failed, 0 skipped after the bounded correction pass.
 - Production build: passed with Next.js 16.2.10; 33 pages generated, including 10 legacy and 12 alumni detail paths.
 - API checks: GET 200, valid POST 200, invalid JSON POST 400.
 - Browser log: 0 errors, 0 warnings and 0 hydration/client-server mismatch messages.
 - Secret scan: 0 credential/private-key patterns; only `.env.example` is tracked.
+- Focused correction QA: required, email, year, final-draft, draft-review and consent errors exposed matching ARIA associations; guided submission, admin approval and local preview passed; the browser title was `Contribute a Story | StoryBridge Legacy`; 375px and 1280px checks had no horizontal overflow; console/hydration inspection returned 0 errors and 0 warnings; the fictional QA record was removed.
 
 ## Responsive and browser audit
 
@@ -75,12 +76,14 @@ The vulnerable copy is used by the Next.js build/tooling dependency path; the MV
 - Medium: final UI/API copy still referred to “Stage 7.” Fixed to describe the current deterministic MVP.
 - Medium: `AGENTS.md` inaccurately described a GPT-5.6 application Story Guide and retained stage-oriented language. Consolidated without weakening privacy, accuracy, scope or deployment safeguards.
 - Medium: final documentation lacked the complete architecture, journeys, deployment, audit and demo evidence requested for submission readiness. Consolidated and corrected.
+- Medium: contribution validation errors were visible but not programmatically associated with their controls. Fixed with stable error IDs, conditional `aria-invalid`, and helper-plus-error `aria-describedby` references, including the final-draft review and consent checkboxes.
+- Optional bounded polish: corrected the contribution metadata title so the root template appends `StoryBridge Legacy` only once.
 
-## Deployment readiness and limitations
+## Production deployment and limitations
 
-The build is Vercel-compatible; paths are repository-relative and case-correct; all dynamic paths generated; browser storage is client-guarded; `.env.local` is absent from Git; no database or secret is required. The Vercel CLI is not installed, so authentication and production verification have not been attempted. Use the Vercel GitHub import flow after explicit approval.
+The Vercel production deployment at https://storybridge-legacy.vercel.app was verified on 2026-07-20. Live checks passed for primary routes, Legacy interactions, contribution, deterministic guidance, persistence, moderation and approved preview, Alumni filters/profiles, engagement, Impact, Story Guide API GET, responsive behaviour and browser console. The repository remains connected to Vercel, so pushes to `main` should trigger a new production deployment.
 
-Remaining limitations: browser-local device-specific storage; no production authentication, database, email, real verification, automated matching, payments, donations, financial or investment transactions, production safeguarding, multi-school tenancy or runtime OpenAI integration. Deployment, independent secondary-thread audit, demo video, `/feedback` and final submission remain pending.
+Remaining limitations: browser-local device-specific storage; no production authentication, database, email, real verification, automated matching, payments, donations, financial or investment transactions, production safeguarding, multi-school tenancy or runtime OpenAI integration. Demo video, `/feedback` and final Devpost submission remain pending.
 
 ## Audit-history summary
 
@@ -91,4 +94,5 @@ Remaining limitations: browser-local device-specific storage; no production auth
 | Stage 7 contribution and guidance | 14 tests, build, API and browser QA passed |
 | Stage 8 alumni and engagement | 23 tests, 33-page build and browser QA passed |
 | Stage 9 moderation and impact | 33 tests, 33-page build and browser QA passed |
-| Stages 10–11 final local audit | All checks and full acceptance journey passed; deployment pending |
+| Stages 10–11 final local audit | All checks and full acceptance journey passed |
+| Independent final audit and production verification | Live deployment passed; bounded accessibility/title/evidence corrections implemented and locally retested |
